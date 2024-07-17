@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Vladislav Dostavalov</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img class="logo" src="img/logo_veroduplex.svg" height=24 alt="Logo Veroduplex"/></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="submenu">
+                    <a href="#" class="active">Portfolio</a>
+                    <ul class="submenu-items">
+                        <li><a href="design-system.html">Design System</a></li>
+                        <li><a href="home-page.html">Home Page</a></li>
+                        <li><a href="payment-groups.html">Payment Groups</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="downloadPdf" class="download-button">Download CV</button>
+        </nav>
+    </header>
+    <main class="design-system-page">
+        <article>
+            <section id="overview">
+                <h2>Project Case Study: Development&nbsp;of a&nbsp;Comprehensive <span class="highlight">Design&nbsp;System</span></h2>
+                <div class="info">
+                    <h3>Overview</h3>
+                    <p><strong>Project:</strong> Development of a Design System</p>
+                    <p><strong>Role:</strong> Senior Product Designer</p>
+                    <p><strong>Duration:</strong> Ongoing (Over 1 year)</p>
+                </div>
+                <div>
+                    <h3>Challenge</h3>
+                    <p>Upon joining the team, the application suffered from significant inconsistencies both visually and technically. There were fragmented, unsystematized, and duplicate components in Figma. A majority of the layouts lacked the use of proper components. It became clear that a comprehensive design system was essential.</p>
+                </div>
+                <ul>
+                    <h3>Objectives</h3>
+                    <li>Establish a unified design system to ensure consistency across all platforms.</li>
+                    <li>Systematize color palettes using color tokens and variables in Figma.</li>
+                    <li>Develop components utilizing auto-layout, color tokens, spacing variables, and typographic styles.</li>
+                    <li>Create guidelines, a backlog of tasks for development, and a design checklist.</li>
+                    <li>Implement atomic design principles, starting with the most frequent elements and expanding to cover all new flows.</li>
+                </ul>
+            </section>
+            <section id="process">
+                <h3>Process</h3>
+                <ol class="process-list">
+                    <li>
+                        <strong>Initiation and Systematization:</strong>
+                        <ul>
+                            <li>Analyzed existing design inconsistencies.</li>
+                            <li>Systematized color palettes using <span class="highlight">color tokens and variables</span>, enabling flexible dark mode adjustments and reducing workload.</li>
+                            <li>Developed components that utilized <span class="highlight">auto-layout, color tokens, sizing & spacing variables</span>, and <span class="highlight">typographic styles</span>, ensuring consistency and flexibility across iOS and Android platforms.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Documentation and Guidelines:</strong>
+                        <ul>
+                            <li>Collaborated with the team to draft <span class="highlight">guidelines and standards</span> for the design system.</li>
+                            <li>Created a <span class="highlight">backlog of tasks</span> for the design system’s development and maintenance.</li>
+                            <li>Developed a comprehensive <span class="highlight">design checklist</span> to ensure adherence to the new system.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Component Development:</strong>
+                        <ul>
+                            <li>Followed <span class="highlight">atomic design</span> principles, starting with the <span class="highlight">most frequently used elements</span>.</li>
+                            <li>Expanded the component library to include <span class="highlight">elements for new flows</span>.</li>
+                            <li>Ensured the design system components covered all new flows and gradually replaced elements in existing flows that hadn't yet undergone redesign.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Integration and Implementation:</strong>
+                        <ul>
+                            <li>Achieved <span class="highlight">full integration</span> of the design system within six months.</li>
+                            <li>All new flows were developed entirely using design system components, significantly <span class="highlight">enhancing consistency and productivity</span>.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <img src="img/ds-process_thumb-zone.png" id="thumbzone" class="parallax-image" data-speed="-0.01" alt="Thumb zone">
+                <img src="img/ds-process_img1.png" id="panel1" class="parallax-image" data-speed="-0.015" alt="Thumb zone">
+                <img src="img/ds-process_img2.png" id="panel2" class="parallax-image" data-speed="-0.025" alt="Thumb zone">
+                <img src="img/ds-process_img3.png" id="panel3" class="parallax-image" data-speed="-0.01" alt="Thumb zone">
+                <img src="img/ds-process_component-structure.png" id="component" class="parallax-image" data-speed="-0.032" alt="Thumb zone">
+            </section>
+            <section id="impact">
+                <h3>Impact</h3>
+                <ul class="impact-list">
+                    <li>
+                        <strong>Component Adoption Rate:</strong>
+                        <p>Component usage increased from a few basic elements to 90% of workflows using standardized components.</p>
+                    </li>
+                    <li>
+                        <strong>Efficiency:</strong>
+                        <p>Development speed improved, reducing the average time to design and develop new features from 8 weeks to 5 weeks.</p>
+                    </li>
+                    <li>
+                        <strong>Productivity:</strong>
+                        <p>UI error rates decreased dramatically, reflecting improved usability and fewer design flaws.</p>
+                    </li>
+                    <li>
+                        <strong>Onboarding Time for New Designers:</strong>
+                        <p>Reduced from 6 weeks to 3 weeks, thanks to clear documentation and standardized design patterns.</p>
+                    </li>
+                    <li>
+                        <strong>Bug Reduction Rate:</strong>
+                        <p>Design-related bugs decreased by 40%, indicating a significant improvement in the quality and reliability of the design implementations.</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="highlight">
+                <h3>Case Highlight:<br><span class="highlight">Automated Color Token Management</span></h3>
+                <ul class="no-marker">
+                    <li>
+                        <strong>Problem:</strong>
+                        <p>The evolving design system required frequent updates to the color scheme. Developers had to manually search for changes and update colors, leading to inefficiencies.</p>
+                    </li>
+                    <li>
+                        <strong>Solution:</strong>
+                        <ul>
+                            <li>Proposed and developed a custom Figma plugin to export a table of color tokens in a convenient format with navigation.</li>
+                            <li>Eliminated the manual task of updating colors in the table, simplifying updates for designers and developers.</li>
+                            <li>Ensured timely and straightforward updates to the color tokens.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="img/ds-highlight_code.png" id="ds-highlight-code" class="parallax-image" data-speed="-0.01" alt="Thumb zone">
+                <img src="img/ds-highlight_tokens.png" id="ds-highlight-tokens" class="parallax-image" data-speed="-0.02" alt="Thumb zone">
+            </section>
+            <section id="current-state">
+                <h3>Current State of the Design System</h3>
+                <ul class="impact-list">
+                    <li><strong>Components:</strong> Over 100 components</li>
+                    <li><strong>Color Tokens:</strong> 443 color tokens</li>
+                    <li><strong>Typographic Styles:</strong> 19 typographic styles</li>
+                </ul>
+            </section>
+            <section id="conclusion">
+                <h3>Conclusion</h3>
+                <p class="conclusion-p">The implementation of the design system has significantly enhanced design consistency, productivity, and overall efficiency. The systematic approach and integration of automated tools have set a new standard for the team, ensuring seamless and timely updates and reducing manual workload.</p>
+                <div class="navigation-container">
+                    <div class="navigation-block left">
+                        <a href="design-system.html">
+                            <span class="overline">RESUME</span>
+                            <div class="project-name">Vladislav Dostavalov</div>
+                            <div class="project-description">Development of a comprehensive design system to ensure consistency across all platforms.</div>
+                            <img src="img/arrow-left.svg" class="arrow-icon" alt="Left Arrow">
+                        </a>
+                    </div>
+                    <div class="navigation-block right">
+                        <a href="home-page.html">
+                            <span class="overline">NEXT PROJECT</span>
+                            <div class="project-name">Home Page</div>
+                            <div class="project-description">A feature to simplify regular payments such as utilities, car expenses, subscriptions, and other recurring payments.</div>
+                            <img src="img/arrow-right.svg" class="arrow-icon" alt="Right Arrow">
+                        </a>
+                    </div>
+                </div>
+                <img src="img/ds-conclusion_phone2.png" id="ds-conc-phone2" class="parallax-image" data-speed="-0.03" alt="Thumb zone">
+                <img src="img/ds-conclusion_phone1.png" id="ds-conc-phone1" class="parallax-image" data-speed="-0.01" alt="Thumb zone">
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
