@@ -661,9 +661,9 @@ img#ds-highlight-code {
 }
 
 img#hp-process {
-    right: 2%;
-    bottom: 0%;
-    width: 97%;
+    right: 5%;
+    bottom: -5%;
+    width: calc(40vh + 40vw);
 }
 
 img#hp-feat-banners {
@@ -863,6 +863,12 @@ img#pg-feat-phone4 {
 
     #animatedText {
         font-size: 3rem;
+    }
+
+    img#hp-process {
+        right: 6%;
+        bottom: 0%;
+        width: 75%;
     }
 }
 
