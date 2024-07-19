@@ -27,7 +27,7 @@ html, body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth; /* Enable smooth scrolling */
-    font-size: calc(9px + 0.6vh);
+    font-size: calc(6px + 0.9vh);
 }
 
 body {
@@ -139,8 +139,8 @@ section {
     position: relative;
     scroll-snap-align: start; /* Align each section to the start */
     height: 100vh;
-    width: 100%;
-    padding: 8% 27%;
+    width: 100vw;
+    padding: 6rem 24rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -407,8 +407,8 @@ li strong {
 
 section#process-home-page ol.process-list {
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 0 4rem; /* Adjust the gap between columns as needed */
+    grid-template-columns: 38% 58%;
+    gap: 0 4%; /* Adjust the gap between columns as needed */
 }
 
 section#process-home-page .process-list li:nth-child(1), 
@@ -1015,6 +1015,10 @@ img#pg-feat-phone4 {
         bottom: 0%;
         width: 75%;
     }
+
+    #additional-information p {
+        max-width: 40rem;
+    }
 }
 
 /* Styles for 1280px */
@@ -1038,21 +1042,107 @@ img#pg-feat-phone4 {
     }
 
     img#component {
-        right: 0;
-        bottom: -3%;
+        right: -2rem;
+        bottom: -3rem;
         width: 35%;
     }
 
-    img#ds-conc-phone1 {
-        right: 2%;
-        bottom: 15%;
+    img#panel1 {
+        left: 1%;
+        bottom: -3%;
+        width: 8%;
+    }
+
+    img#panel2 {
+        left: 2%;
+        bottom: 0%;
+        width: 14%;
+    }
+
+    img#panel3 {
+        left: 7%;
+        bottom: 2%;
+        width: 14%;
+    }
+
+    #ds-prot-img1 {
+        bottom: -5%;
+        right: 6%;
+        width: 9%;
+    }
+
+    #ds-prot-img2 {
+        top: 4%;
+        left: 7%;
+        width: 13%;
+    }
+
+    #ds-prot-img3 {
+        bottom: 0%;
+        left: 14%;
         width: 15%;
     }
 
+    #ds-prot-img4 {
+        bottom: -20%;
+        left: 37%;
+        width: 31%;
+    }
+
+    #ds-prot-img5 {
+        top: 11%;
+        right: 0%;
+        width: 27%;
+    }
+
+    #ds-prot-img9 {
+        top: 9%;
+        right: 28%;
+        width: 14%;
+    }
+
+    #ds-prot-img6 {
+        top: 26%;
+        right: 15%;
+        width: 15%;
+    }
+
+    #ds-prot-img7 {
+        bottom: -6%;
+        left: 4%;
+        width: 17%;
+    }
+
+    #ds-prot-img8 {
+        top: 11%;
+        left: -2%;
+        width: 13%;
+    }
+
+
+
     img#ds-conc-phone2 {
         right: 14%;
-        bottom: 12%;
-        width: 15%;
+        bottom: -4rem;
+        width: 15rem;
+    }
+
+    img#ds-conc-phone1 {
+        right: 4%;
+        bottom: 2rem;
+        width: 15rem;
+    }
+
+    img#pg-proc-section1 {
+        left: 4rem;
+        bottom: -5rem;
+        width: calc(30vh + 30vw);
+    }
+
+    img#pg-proc-section2 {
+        right: -3rem;
+        bottom: 2rem;
+        width: calc(24vh + 24vw);
     }
 
     img#hp-process {
@@ -1117,6 +1207,7 @@ img#pg-feat-phone4 {
         flex-direction: column;
         justify-content: left;
         height: auto;
+        padding: 6rem 20rem;
     }
     section.contact-section {
         height: 100vh;
@@ -1191,17 +1282,17 @@ img#pg-feat-phone4 {
     }
 
     section#features-hp {
-        padding-bottom: 16rem;
+        padding-bottom: 24rem;
     }
 
     img#hp-feat-phone2 {
-        right: calc(-47% + 50vw);
+        right: 0rem;
         bottom: calc(-23% + 50vh);
         width: calc(10vh + 10vw);
     }
 
     img#hp-feat-phone1 {
-        right: calc(-41% + 50vw);
+        right: 5rem;
         bottom: calc(-35% + 50vh);
         width: calc(10vh + 10vw);
     }
@@ -1212,12 +1303,12 @@ img#pg-feat-phone4 {
     }
 
     img#hp-feat-banners {
-        left: 4%;
+        left: 2rem;
         bottom: calc(-42% + 50vh);
     }
 
     img#hp-feat-banner2 {
-        left: -7%;
+        left: -5rem;
         bottom: calc(-38% + 50vh);
     }
 
