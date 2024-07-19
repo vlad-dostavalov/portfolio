@@ -27,6 +27,7 @@ html, body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth; /* Enable smooth scrolling */
+    font-size: calc(9px + 0.6vh);
 }
 
 body {
@@ -96,6 +97,7 @@ main {
     scroll-behavior: smooth;
     scrollbar-width: none; /* For Firefox */
     overflow-y: scroll;
+    overflow-x: hidden;
     width: 100%;
     height: 100vh;
 }
@@ -180,7 +182,7 @@ button:hover {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
     z-index: 100;
-    border-radius: 16px;
+    border-radius: 24px;
 }
 
 .download-button:hover {
@@ -466,7 +468,7 @@ ul.no-marker>li {
     position: absolute;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     padding: 0 calc(50vw - 700px);
     width: 100%;
     bottom: 0;
@@ -608,6 +610,145 @@ ul.no-marker>li {
 .contact-link:hover {
     color: #ffd700cc;
 }
+
+
+
+
+
+
+
+
+
+/* Styles for the centered button section */
+#prototype {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-button {
+    z-index: 9;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    border-radius: 48px;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.centered-button:hover {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: var(--bg-color);
+}
+
+.centered-image {
+    position: absolute;
+    transform-origin: center center;
+    max-width: 100%;
+    height: auto;
+}
+
+#ds-prot-img1 {
+    bottom: -5%;
+    right: 7%;
+    width: 15%;
+}
+
+#ds-prot-img2 {
+    top: 4%;
+    left: 6%;
+    width: 15%;
+}
+
+#ds-prot-img3 {
+    bottom: 0%;
+    left: 14%;
+    width: 20%;
+}
+
+#ds-prot-img4 {
+    bottom: -20%;
+    left: 37%;
+    width: 36%;
+}
+
+#ds-prot-img5 {
+    top: 4%;
+    right: 0%;
+    width: 32%;
+}
+
+#ds-prot-img6 {
+    top: 19%;
+    right: 22%;
+    width: 15%;
+}
+
+#ds-prot-img7 {
+    bottom: -5%;
+    left: 0%;
+    width: 20%
+}
+
+#ds-prot-img8 {
+    top: 10%;
+    left: -5%;
+    width: 16%;
+}
+
+#ds-prot-img9 {
+    top: 1%;
+    right: 41%;
+    width: 16%;
+}
+
+#ds-prot-backglow {
+    width: 80%;
+}
+
+/* Ensure the images scale proportionally */
+@media (max-width: 768px) {
+    .centered-image {
+        width: auto;
+        max-width: 50%;
+        height: auto;
+    }
+
+    #img1 {
+        top: 5%;
+        left: 10%;
+        width: 30%;
+    }
+
+    #img2 {
+        top: 35%;
+        right: 10%;
+        width: 25%;
+    }
+
+    #img3 {
+        bottom: 5%;
+        left: 15%;
+        width: 35%;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 /* Image styles */
 img#thumbzone {
@@ -1022,10 +1163,6 @@ img#pg-feat-phone4 {
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
     }
-    
-    .payment-groups-page section#overview {
-        padding: 4rem 1rem 20rem;
-    }
 
     img#component {
         right: 0;
@@ -1044,7 +1181,7 @@ img#pg-feat-phone4 {
     }
 
     section#process-home-page {
-        padding-bottom: 16rem;
+        padding-bottom: 20rem;
     }
 
     img#hp-process {
@@ -1054,18 +1191,18 @@ img#pg-feat-phone4 {
     }
 
     section#features-hp {
-        padding-bottom: 12rem;
+        padding-bottom: 16rem;
     }
 
     img#hp-feat-phone2 {
         right: calc(-47% + 50vw);
-        bottom: calc(-8% + 50vh);
+        bottom: calc(-23% + 50vh);
         width: calc(10vh + 10vw);
     }
 
     img#hp-feat-phone1 {
-        right: calc(-44% + 50vw);
-        bottom: calc(-32% + 50vh);
+        right: calc(-41% + 50vw);
+        bottom: calc(-35% + 50vh);
         width: calc(10vh + 10vw);
     }
 
@@ -1092,7 +1229,15 @@ img#pg-feat-phone4 {
         bottom: 6%;
     }
     
+    .home-page section#conclusion {
+        padding-bottom: 40%;
+    }
 
+    img#hp-conc-tick {
+        right: calc(-30% + 50vw);
+        bottom: 50%;
+        width: 7%;
+    }
 
     
 
@@ -1121,6 +1266,61 @@ img#pg-feat-phone4 {
     #additional-information {
         padding-bottom: 35%;
     }
+
+
+    img#pg-proc-section1 {
+        left: 2%;
+        bottom: 3%;
+        width: calc(30vh + 30vw);
+    }
+
+    img#pg-proc-section2 {
+
+    }
+
+    img#pg-proc-tip {
+
+    }
+
+    img#pg-feat-cats {
+
+    }
+
+    img#pg-feat-phone1 {
+        left: -1%;
+    }
+
+    img#pg-feat-phone2 {
+        right: 13%;
+        top: 30%;
+        width: calc(9vh + 9vw);
+    }
+
+    img#pg-feat-phone3 {
+        right: 4%;
+        top: 20%;
+        width: calc(9vh + 9vw);
+    }
+
+    img#pg-feat-phone4 {
+        right: -5%;
+        top: 10%;
+        width: calc(9vh + 9vw);
+    }
+
+    .payment-groups-page section#conclusion {
+        padding-bottom: 35%;
+    }
+
+    #process-payment-groups {
+        padding-bottom: 35%;
+    }
+
+    #features-pg {
+        padding-bottom: 20%;
+    }
+
+
 }
 
 /* General mobile styles */
@@ -1228,7 +1428,7 @@ img#pg-feat-phone4 {
     }
 
     section#process-payment-groups {
-        padding-bottom: 38rem;
+        padding-bottom: 42rem;
     }
 
     img#pg-proc-section1 {
@@ -1251,7 +1451,7 @@ img#pg-feat-phone4 {
     }
 
     section#features-pg {
-        padding-bottom: 24rem;
+        padding-bottom: 28rem;
     }
 
     img#pg-feat-cats {
@@ -1356,12 +1556,25 @@ img#pg-feat-phone4 {
         justify-content: center;
     }
 
-    section#conclusion {
+    section#conclusion, .home-page section#conclusion, .payment-groups-page section#conclusion, .design-system-page section#conclusion {
         padding-bottom: 65%;
+    }
+
+    section#prototype {
+        height: 50vh;
+    }
+
+    #ds-prot-backglow {
+        width: 100%;
+        max-width: none;
     }
 
     #additional-information {
         padding-bottom: 35%;
+    }
+
+    #ds-prot-img1, #ds-prot-img2, #ds-prot-img3, #ds-prot-img4, #ds-prot-img5, #ds-prot-img6, #ds-prot-img7, #ds-prot-img8, #ds-prot-img9 {
+        display: none;
     }
 }
 
@@ -1464,31 +1677,35 @@ img#pg-feat-phone4 {
     }
 
     section#process-home-page {
-        padding: 4rem 1rem 8rem;
+        padding: 4rem 1rem 14rem;
     }
 
     section#features-pg {
-        padding: 4rem 1rem 24rem;
+        padding: 4rem 1rem 28rem;
     }
 
     section#process-payment-groups {
-        padding: 4rem 1rem 20rem;
+        padding: 4rem 1rem 28rem;
+    }
+
+    .payment-groups-page section#overview {
+        padding: 4rem 1rem 24rem;
     }
 
     section#features-hp {
-        padding: 4rem 1rem 18rem;
+        padding: 4rem 1rem 22rem;
     }
 
     section#process-home-page ol.process-list {
         display: block;
     }
 
-    section#conclusion {
+    section#conclusion, .home-page section#conclusion, .payment-groups-page section#conclusion, .design-system-page section#conclusion {
         padding-bottom: 30rem;
     }
 
     section#process {
-        padding: 4rem 1rem 14rem;
+        padding: 4rem 1rem 20rem;
     }
 
     .navigation-block a {
@@ -1559,18 +1776,18 @@ img#pg-feat-phone4 {
 
     img#ds-conc-phone1 {
         right: 4%;
-        bottom: 29%;
+        bottom: 25%;
         width: 25%;
     }
 
     img#ds-conc-phone2 {
         right: 21%;
-        bottom: 27%;
+        bottom: 19%;
         width: 24%;
     }
 
     section#highlight {
-        padding: 4rem 1rem 8rem;
+        padding: 4rem 1rem 12rem;
     }
 
     img#ds-highlight-tokens {
@@ -1617,7 +1834,7 @@ img#pg-feat-phone4 {
 
     img#hp-conc-cell3 {
         left: 35%;
-        bottom: 41%;
+        bottom: 33%;
         width: calc(12vh + 12vw);
     }
     
@@ -1627,31 +1844,31 @@ img#pg-feat-phone4 {
     
     img#hp-conc-phone1 {
         right: 2%;
-        bottom: 24%;
+        bottom: 16%;
         width: calc(10vh + 10vw);
     }
     
     img#hp-conc-phone2 {
         left: 2%;
-        bottom: 22%;
+        bottom: 14%;
         width: 30%;
     }
     
     img#hp-conc-cell1 {
         left: 24%;
-        bottom: 34%;
+        bottom: 26%;
         width: calc(12vh + 12vw);
     }
     
     img#hp-conc-cell4 {
         right: 20%;
-        bottom: 32%;
+        bottom: 24%;
         width: calc(10vh + 16vw);
     }
     
     img#hp-conc-tick {
-        right: calc(-30% + 50vw);
-        bottom: 45%;
+        right: calc(-25% + 50vw);
+        bottom: 44%;
         width: 18%;
     }
 
@@ -1679,20 +1896,21 @@ img#pg-feat-phone4 {
     }
     
     img#pg-proc-section1 {
-        left: 2%;
-        bottom: 16%;
-        width: calc(30vh + 30vw);
+        left: 21%;
+        bottom: 20%;
+        width: calc(34vh + 34vw);
     }
     
     img#pg-proc-section2 {
-        right: 2%;
-        bottom: 0%;
+        right: 20%;
+        bottom: 2%;
         width: calc(24vh + 24vw);
     }
     
     img#pg-proc-tip {
+        left: auto;
         right: 2%;
-        bottom: 12%;
+        bottom: 1%;
         width: calc(18vh + 18vw);
     }
     
@@ -1817,5 +2035,24 @@ img#pg-feat-phone4 {
         margin-top: 2rem;
         color: white; /* Ensure button text is white */
         background-color: #333; /* Ensure button background is visible */
+    }
+
+
+    .navigation-block.right:hover a, .navigation-block.left:hover a {
+        transform: none;
+    }
+
+    .navigation-block:hover .arrow-icon, .navigation-block.left:hover .arrow-icon {
+        opacity: 0;
+        transform: none;
+    }
+
+    #prototype {
+        height: 35vh;
+    }
+
+    #ds-prot-backglow {
+        width: 110%;
+        max-width: none;
     }
 }
