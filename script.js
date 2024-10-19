@@ -1,62 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const isMobile = window.innerWidth < 1024;
+    // Module 1: Menu Toggle
+    (() => {
+        const menuIcon = document.getElementById('menuIcon');
+        const overlayMenu = document.getElementById('overlayMenu');
 
-    const menuIcon = document.getElementById('menuIcon');
-    const overlayMenu = document.getElementById('overlayMenu');
-    const overlayDownloadPdf = document.getElementById('overlayDownloadPdf');
-    
-    if (isMobile) {
-        menuIcon.addEventListener('click', () => {
-            menuIcon.classList.toggle('open');
-            overlayMenu.classList.toggle('open');
-        });
-    }
+        if (menuIcon && overlayMenu) {
+            menuIcon.addEventListener('click', () => {
+                menuIcon.classList.toggle('open');
+                overlayMenu.classList.toggle('open');
+            });
+        }
+    })();
 
-    const downloadButton = document.getElementById('downloadPdf');
-    if (downloadButton) {
-        downloadButton.addEventListener('click', () => {
-            const pdfUrl = 'files/CV_VladislavDostavalov.pdf';
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'CV_VladislavDostavalov.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    }
+    // Module 2: Download Button
+    // (() => {
+    //     const downloadButton = document.getElementById('downloadPdf');
+    //     if (downloadButton) {
+    //         downloadButton.setAttribute('href', 'files/CV_VladislavDostavalov.pdf');
+    //         downloadButton.setAttribute('download', 'CV_VladislavDostavalov.pdf');
+    //     }
+    // })();
 
-    if (!isMobile) {
-        document.body.style.overflow = 'hidden';
-
+    // Module 3: Animated Text Effect
+    (() => {
         const animatedText = document.getElementById('animatedText');
         if (animatedText) {
             const words = animatedText.innerHTML.split('<br>');
-            animatedText.innerHTML = words.map(word =>
-                word.split('').map(char => `<span>${char}</span>`).join('')
-            ).join('<br>');
+            animatedText.innerHTML = words
+                .map(word => word.split('').map(char => `<span>${char}</span>`).join(''))
+                .join('<br>');
             const spans = animatedText.querySelectorAll('span');
 
-            document.addEventListener('mousemove', (e) => {
-                const { clientX, clientY } = e;
+            let mouseX = 0,
+                mouseY = 0;
+            let animationFrameId;
 
-                spans.forEach((span) => {
+            document.addEventListener('mousemove', event => {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+
+                if (!animationFrameId) {
+                    animationFrameId = requestAnimationFrame(updateTextEffect);
+                }
+            });
+
+            function updateTextEffect() {
+                spans.forEach(span => {
                     const rect = span.getBoundingClientRect();
                     const spanCenterX = rect.left + rect.width / 2;
                     const spanCenterY = rect.top + rect.height / 2;
 
-                    const distance = Math.sqrt(
-                        Math.pow(clientX - spanCenterX, 2) +
-                        Math.pow(clientY - spanCenterY, 2)
-                    );
-
+                    const distance = Math.hypot(mouseX - spanCenterX, mouseY - spanCenterY);
                     const maxDistance = 600;
-                    const weight = Math.max(200, Math.min(900, 900 - (distance / maxDistance) * 800));
-
-                    span.style.fontVariationSettings = `"wght" ${weight}`;
+                    if (distance < maxDistance) {
+                        const weight = Math.max(
+                            200,
+                            Math.min(900, 900 - (distance / maxDistance) * 800)
+                        );
+                        span.style.fontVariationSettings = `"wght" ${weight}`;
+                    } else {
+                        span.style.fontVariationSettings = `"wght" 200`;
+                    }
                 });
-            });
+                animationFrameId = null;
+            }
         }
+    })();
 
+    // Module 4: Case Study Links Hover Effect
+    (() => {
         const caseStudyLinks = document.querySelectorAll('.case-studies a');
         caseStudyLinks.forEach(link => {
             link.addEventListener('mouseenter', () => {
@@ -68,18 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.style.setProperty('--underline-scale', '0');
             });
         });
+    })();
 
+    // Module 5: Profile Photo Parallax Effect
+    (() => {
+        const main = document.querySelector('main');
         const profilePhoto = document.querySelector('.profile-photo');
-        if (profilePhoto) {
-            let lastScrollY = window.scrollY;
+        if (profilePhoto && main) {
+            let lastScrollY = main.scrollTop;
             let targetTransformY = 0;
             let currentTransformY = 0;
 
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
+            main.addEventListener('scroll', () => {
+                const currentScrollY = main.scrollTop;
                 const scrollDifference = currentScrollY - lastScrollY;
-                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = currentScrollY / maxScroll;
                 const parallaxEffect = scrollDifference * 0.5;
                 targetTransformY += parallaxEffect;
                 lastScrollY = currentScrollY;
@@ -93,119 +107,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateParallax();
         }
+    })();
 
-        const animatedImages = document.querySelectorAll('.parallax-image');
-        let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+// Module 6: Parallax Images Based on Mouse Movement with Independent Idle Motion
+(() => {
+    const animatedImages = document.querySelectorAll('.parallax-image');
+    let mouseX = window.innerWidth / 2,
+        mouseY = window.innerHeight / 2,
+        targetX = mouseX,
+        targetY = mouseY;
 
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX;
-            mouseY = event.clientY;
+    // Create an array to store per-image data
+    const imagesData = [];
+
+    animatedImages.forEach(image => {
+        // Each image has its own idle angle, speed, and radius
+        imagesData.push({
+            element: image,
+            idleAngle: Math.random() * Math.PI * 2, // Random starting angle
+            idleSpeed: Math.random() * 0.01 + 0.002, // Random speed between 0.002 and 0.012
+            idleRadius: Math.random() * 20 + 10, // Random radius between 10 and 30 pixels
+        });
+    });
+
+    document.addEventListener('mousemove', event => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    });
+
+    function updateImages() {
+        // Smoothly interpolate target positions towards the mouse position
+        targetX += (mouseX - targetX) * 0.1;
+        targetY += (mouseY - targetY) * 0.1;
+
+        imagesData.forEach(data => {
+            const { element } = data;
+
+            // Increment the angle for idle movement
+            data.idleAngle += data.idleSpeed;
+
+            // Calculate idle offsets using sine and cosine for smooth circular motion
+            const idleX = Math.cos(data.idleAngle) * data.idleRadius;
+            const idleY = Math.sin(data.idleAngle) * data.idleRadius;
+
+            const speed = parseFloat(element.getAttribute('data-speed')) || 0.1;
+
+            // Combine mouse movement and idle movement
+            const translateX = (window.innerWidth / 2 - targetX) * speed + idleX;
+            const translateY = (window.innerHeight / 2 - targetY) * speed + idleY;
+
+            element.style.transform = `translate(${translateX}px, ${translateY}px)`;
         });
 
-        function updateImages() {
-            targetX += (mouseX - targetX) * 0.1;
-            targetY += (mouseY - targetY) * 0.1;
+        requestAnimationFrame(updateImages);
+    }
 
-            animatedImages.forEach(image => {
-                const speed = parseFloat(image.getAttribute('data-speed')) || 0.1;
-                const translateX = (window.innerWidth / 2 - targetX) * speed;
-                const translateY = (window.innerHeight / 2 - targetY) * speed;
-                image.style.transform = `translate(${translateX}px, ${translateY}px)`;
-            });
+    // Start the animation loop
+    updateImages();
+})();
 
-            requestAnimationFrame(updateImages);
-        }
 
-        updateImages();
 
+    // Module 7: Submenu Hover Behavior
+    (() => {
         const submenu = document.querySelector('.submenu');
-        const submenuItems = document.querySelector('.submenu-items');
-        if (submenu && submenuItems) {
-            let submenuTimeout;
+        if (submenu) {
             submenu.addEventListener('mouseenter', () => {
-                clearTimeout(submenuTimeout);
                 submenu.classList.add('show');
             });
             submenu.addEventListener('mouseleave', () => {
-                submenuTimeout = setTimeout(() => {
-                    if (!submenu.matches(':hover') && !submenuItems.matches(':hover')) {
-                        submenu.classList.remove('show');
-                    }
-                }, 300);
-            });
-            submenuItems.addEventListener('mouseenter', () => {
-                clearTimeout(submenuTimeout);
-            });
-            submenuItems.addEventListener('mouseleave', () => {
-                submenuTimeout = setTimeout(() => {
-                    if (!submenu.matches(':hover') && !submenuItems.matches(':hover')) {
-                        submenu.classList.remove('show');
-                    }
-                }, 300);
+                submenu.classList.remove('show');
             });
         }
+    })();
 
-        let isScrolling = false;
-
+    // Module 8: Intersection Observer for Section Animations
+    (() => {
         const main = document.querySelector('main');
         const sections = document.querySelectorAll('section');
 
-        function clamp(value, min, max) {
-            return Math.min(Math.max(value, min), max);
-        }
-
-        function debounce(func, wait) {
-            let timeout;
-            return function() {
-                const context = this, args = arguments;
-                const later = function() {
-                    timeout = null;
-                    func.apply(context, args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
+        if (main && sections.length) {
+            const observerOptions = {
+                root: main,
+                rootMargin: '0px',
+                threshold: 0.1,
             };
-        }
 
-        const observerOptions = {
-            root: main,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionImages = entry.target.querySelectorAll('.parallax-image');
+                        sectionImages.forEach(image => {
+                            image.classList.add('animate');
+                        });
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionImages = entry.target.querySelectorAll('.parallax-image');
-                    sectionImages.forEach(image => {
-                        image.classList.add('animate');
-                    });
+                        const textElements = entry.target.querySelectorAll(
+                            'p, h1, h2, h3, h4, h5, h6, li, span'
+                        );
+                        const duration = 600;
+                        const interval = duration / textElements.length;
 
-                    const textElements = entry.target.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, span');
-                    const duration = 600;
-                    const interval = duration / textElements.length;
+                        textElements.forEach((element, index) => {
+                            element.classList.add('reveal');
+                            setTimeout(() => {
+                                element.classList.add('visible');
+                            }, index * interval);
+                        });
 
-                    textElements.forEach((element, index) => {
-                        element.classList.add('reveal');
-                        setTimeout(() => {
-                            element.classList.add('visible');
-                        }, index * interval);
-                    });
+                        history.replaceState(null, null, `#${entry.target.id}`);
+                    } else {
+                        const textElements = entry.target.querySelectorAll('.reveal');
+                        textElements.forEach(element => {
+                            element.classList.remove('visible');
+                        });
+                    }
+                });
+            }, observerOptions);
 
-                    history.replaceState(null, null, `#${entry.target.id}`);
-                } else {
-                    const textElements = entry.target.querySelectorAll('.reveal');
-                    textElements.forEach(element => {
-                        element.classList.remove('visible');
-                    });
-                }
+            sections.forEach(section => {
+                observer.observe(section);
             });
-        }, observerOptions);
+        }
+    })();
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
+    // Module 9: Progress Bar
+    (() => {
+        const main = document.querySelector('main');
         const progressContainer = document.createElement('div');
         progressContainer.id = 'progress-container';
         const progressBar = document.createElement('div');
@@ -213,108 +240,43 @@ document.addEventListener('DOMContentLoaded', () => {
         progressContainer.appendChild(progressBar);
         document.body.appendChild(progressContainer);
 
-        if (main && sections.length) {
+        if (main) {
             main.addEventListener('scroll', () => {
                 const scrollTop = main.scrollTop;
                 const scrollHeight = main.scrollHeight - main.clientHeight;
                 const scrollFraction = scrollTop / scrollHeight;
                 const progressBarWidth = scrollFraction * 100;
                 progressBar.style.width = `${progressBarWidth}%`;
-            });        
+            });
         }
+    })();
 
-        let currentSectionIndex = 0;
+    // Module 10: Dynamic Total Experience Calculation
+    (() => {
+        const experienceElement = document.getElementById('experience');
 
-        const hash = window.location.hash;
-        if (hash) {
-            const targetSection = document.querySelector(hash);
-            if (targetSection) {
-                targetSection.scrollIntoView();
+        if (experienceElement) {
+            // Дата начала карьеры
+            const startDate = new Date(2008, 10); // Ноябрь 2008 (месяцы с 0)
+
+            // Текущая дата
+            const currentDate = new Date();
+
+            // Расчет разницы в годах и месяцах
+            let totalYears = currentDate.getFullYear() - startDate.getFullYear();
+            let totalMonths = currentDate.getMonth() - startDate.getMonth();
+
+            // Если разница в месяцах отрицательная, уменьшаем количество лет и корректируем количество месяцев
+            if (totalMonths < 0) {
+                totalYears--;
+                totalMonths += 12;
             }
+
+            // Форматируем результат
+            const experienceString = `${totalYears} years ${totalMonths} months`;
+
+            // Вставляем результат на страницу
+            experienceElement.textContent = experienceString;
         }
-
-        function easeInOutSine(t) {
-            return -(Math.cos(Math.PI * t) - 1) / 2;
-        }
-
-        function scrollToSection(index) {
-            if (isScrolling) return;
-            isScrolling = true;
-            const targetSection = sections[index];
-            const start = main.scrollTop;
-            const target = targetSection.offsetTop;
-            const distance = target - start;
-            const duration = 300; // Adjust the duration for smoother animation
-            let startTime = null;
-        
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
-                const easeProgress = easeInOutSine(progress);
-        
-                main.scrollTop = start + distance * easeProgress;
-        
-                if (progress < 1) {
-                    requestAnimationFrame(animation);
-                } else {
-                    isScrolling = false;
-                    currentSectionIndex = index;
-                }
-            }
-        
-            requestAnimationFrame(animation);
-        }
-
-        const debouncedScroll = debounce((event) => {
-            if (isScrolling) return;
-            const scrollThreshold = 20;
-        
-            if (Math.abs(event.deltaY) < scrollThreshold) return;
-        
-            if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-                scrollToSection(currentSectionIndex + 1);
-            } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-                scrollToSection(currentSectionIndex - 1);
-            }
-        }, 100);
-        
-        window.addEventListener('wheel', (event) => {
-            event.preventDefault();
-            handleScroll(event);
-        }, { passive: false });
-        
-        function handleScroll(event) {
-            if (isScrolling) return;
-        
-            const scrollThreshold = 20; // Reduce the threshold for quicker response
-        
-            if (Math.abs(event.deltaY) < scrollThreshold) return;
-        
-            if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-                scrollToSection(currentSectionIndex + 1);
-            } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-                scrollToSection(currentSectionIndex - 1);
-            }
-        }
-
-        document.addEventListener('keydown', debounce((event) => {
-            if (event.key === 'ArrowDown') {
-                currentSectionIndex = clamp(currentSectionIndex + 1, 0, sections.length - 1);
-            } else if (event.key === 'ArrowUp') {
-                currentSectionIndex = clamp(currentSectionIndex - 1, 0, sections.length - 1);
-            }
-            scrollToSection(currentSectionIndex);
-        }, 100));
-
-        function updateProgressBar() {
-            const scrollTop = main.scrollTop;
-            const scrollHeight = main.scrollHeight - main.clientHeight;
-            const scrollFraction = scrollTop / scrollHeight;
-            const progressBarWidth = scrollFraction * 100;
-            progressBar.style.width = `${progressBarWidth}%`;
-        }
-
-        main.addEventListener('scroll', updateProgressBar);
-    }
+    })();
 });
