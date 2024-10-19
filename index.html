@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Vladislav Dostavalov - Senior Product Designer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
@@ -35,6 +36,7 @@
                 <li class="submenu">
                     <a href="#">Portfolio</a>
                     <ul class="submenu-items">
+                        <!-- <li><a href="ai-image-generation.html">AI Image Generation</a></li> -->
                         <li><a href="design-system.html">Design System</a></li>
                         <li><a href="home-page.html">Home Page</a></li>
                         <li><a href="payment-groups.html">Payment Groups</a></li>
@@ -42,7 +44,7 @@
                 </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button id="downloadPdf" class="download-button">Download CV</button>
+            <a id="downloadPdf" class="download-button" href="files/CV_VladislavDostavalov.pdf" download>Download CV</a>
             
 
 
@@ -84,11 +86,11 @@
                 <div class="info">
                     <h3>Senior Product Designer</h3>
                     <p><strong>Date of Birth:</strong> April 2, 1993</p>
-                    <p><strong>Experience:</strong> 14+ years</p>
+                    <p><strong>Total experience:</strong> <span id="experience"></span></p>
                     <p><strong>Seeking:</strong> Senior Product Designer</p>
                 </div>
                 <div>
-                    <p class="index-desc">Senior Product Designer, Creative Producer based in Tashkent, Uzbekistan, <span class="highlight">open&nbsp;to&nbsp;relocation</span>. Over 14 years of experience across Europe, UK, US, and Central Asia. An agile design (Lean UX) advocate, I excel in leading design teams, creating comprehensive design systems, and delivering innovative fintech, UX/UI, arts, and game development solutions. Proven track record in driving user-centered and iterative design processes to achieve impactful product outcomes.</p>
+                    <p class="index-desc">Senior Product Designer, Creative Producer based in Tashkent, Uzbekistan, <span class="highlight">open&nbsp;to&nbsp;relocation</span>. Extensive design experience across Europe, the UK, US, and Central Asia. An agile design (Lean UX) advocate, I excel in leading design teams, creating comprehensive design systems, and delivering innovative fintech, UX/UI, arts, and game development solutions. Proven track record in driving user-centered and iterative design processes to achieve impactful product outcomes.</p>
                 </div>
                 <ul class="highlighted-list">
                     <h3>Case Studies</h3>

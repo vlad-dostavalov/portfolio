@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Design System - Vladislav Dostavalov</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
@@ -35,6 +36,7 @@
                 <li class="submenu">
                     <a href="#" class="active">Portfolio</a>
                     <ul class="submenu-items">
+                        <!-- <li><a href="ai-image-generation.html">AI Image Generation</a></li> -->
                         <li><a href="design-system.html">Design System</a></li>
                         <li><a href="home-page.html">Home Page</a></li>
                         <li><a href="payment-groups.html">Payment Groups</a></li>
@@ -195,10 +197,9 @@
                 </ul>
             </section> -->
             <section id="prototype">
-                <button class="centered-button">
-                    <img src="img/figma_logo.svg">
-                    Try prototype
-                </button>
+                <a href="https://www.figma.com/design/vbUDC37PfFpJiqrTzoqbYD/Design-System?node-id=23204-15025&node-type=frame&t=7t1tUcjASC2xNV4M-11" target="_blank" class="centered-button">
+                    <img src="img/figma_logo.svg">Try prototype
+                </a>
                 <img src="img/backglow.png" id="ds-prot-backglow" class="centered-image">
                 <img src="img/ds-new_01.png" id="ds-prot-img1" class="centered-image parallax-image" data-speed="-0.01">
                 <img src="img/ds-new_02.png" id="ds-prot-img2" class="centered-image parallax-image" data-speed="0.005">
