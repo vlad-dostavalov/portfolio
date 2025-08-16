@@ -279,4 +279,89 @@ document.addEventListener('DOMContentLoaded', () => {
             experienceElement.textContent = experienceString;
         }
     })();
+
+    // Module 11: for controlling image scroll in the new section
+    (() => {
+        const scrollingSection = document.getElementById('scrolling-images-section');
+        const imagesContainer = scrollingSection.querySelector('.images-container');
+        let isFixedScrolling = false;
+        let velocity = 0; // Scroll velocity
+        let isScrolling = false;
+    
+        const observerOptions = {
+            root: null, // Use viewport as root
+            threshold: 0.5 // Trigger when half the section is visible
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    isFixedScrolling = true;
+                    document.body.style.overflow = 'hidden'; // Disable default body scroll
+                } else {
+                    isFixedScrolling = false;
+                    document.body.style.overflow = 'auto'; // Enable default body scroll
+                }
+            });
+        }, observerOptions);
+    
+        observer.observe(scrollingSection);
+    
+        // Scroll event handler to initiate inertia effect
+        scrollingSection.addEventListener('wheel', (event) => {
+            if (isFixedScrolling) {
+                event.preventDefault();
+    
+                // Increase velocity proportionally to the scroll input but make it slower
+                velocity += event.deltaY / 10;
+    
+                if (!isScrolling) {
+                    isScrolling = true;
+                    requestAnimationFrame(inertiaScroll);
+                }
+            }
+        });
+    
+        // Inertia scroll effect using requestAnimationFrame
+        function inertiaScroll() {
+            if (!isScrolling) return;
+    
+            // Apply the current velocity to scroll the images
+            imagesContainer.scrollTop += velocity;
+    
+            // Gradually reduce the velocity for the inertia effect
+            velocity *= 0.95; // Deceleration factor (lower value = faster deceleration)
+    
+            // Stop scrolling if the velocity is very small
+            if (Math.abs(velocity) < 0.1) {
+                isScrolling = false;
+                velocity = 0;
+            }
+    
+            // Control section transitions
+            if (imagesContainer.scrollTop >= imagesContainer.scrollHeight - scrollingSection.clientHeight) {
+                // User must be at the bottom, scrolling down to proceed to the next section
+                if (velocity > 0) {
+                    isFixedScrolling = false; // Allow normal section transition after reaching the bottom
+                    document.body.style.overflow = 'auto';
+                }
+            }
+    
+            if (imagesContainer.scrollTop <= 0) {
+                // User must be at the top, scrolling up to proceed to the previous section
+                if (velocity < 0) {
+                    isFixedScrolling = false; // Allow normal section transition after reaching the top
+                    document.body.style.overflow = 'auto';
+                }
+            }
+    
+            // Continue the animation loop if still scrolling
+            if (isScrolling) {
+                requestAnimationFrame(inertiaScroll);
+            }
+        }
+    })();
+
+    
+    
 });

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-    <title>Vladislav Dostavalov - Senior Product Designer</title>
+    <title>Resume - Vladislav Dostavalov</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -29,26 +28,40 @@
 <body>
     <header>
         <nav>
-            <a href="index.html"><img class="logo" src="img/logo_veroduplex.svg" height=24 alt="Logo Veroduplex"/></a>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
+            <!-- Select element for profession navigation -->
+            <div class="profession-select">
+                <a href="index.html"><img class="logo" src="img/logo_veroduplex.svg" height=24 alt="Logo Veroduplex"/></a>
+                <ul class="nav-left">
+                    <li class="submenu">
+                        <a href="#" class="active">Product Designer</a>
+                        <!-- <ul class="submenu-items">
+                            <li><a href="resume-creative-producer.html">Creative Producer</a></li>
+                            <li><a href="resume-digital-artist.html">Digital Artist</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Centered navigation list -->
+            <ul class="nav-center">
+                <li><a href="#" class="active">Resume</a></li>
                 <li class="submenu">
                     <a href="#">Portfolio</a>
                     <ul class="submenu-items">
-                        <!-- <li><a href="ai-image-generation.html">AI Image Generation</a></li> -->
                         <li><a href="design-system.html">Design System</a></li>
                         <li><a href="home-page.html">Home Page</a></li>
                         <li><a href="payment-groups.html">Payment Groups</a></li>
+                        <li><a href="get.art.html">Domain Marketplace</a></li>
+                        <li><a href="ai-image-generation.html">AI Image Generation</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contacts-product_designer.html">Contact</a></li>
             </ul>
-            <a id="downloadPdf" class="download-button" href="files/CV_VladislavDostavalov.pdf" download>Download CV</a>
-            
 
-
-            
+            <!-- Download button on the right -->
+            <div class="header-right-container">
+                <a id="downloadPdf" class="download-button" href="files/CV_VladislavDostavalov.pdf" download>Download CV</a>
+            </div>
             <!-- Menu Icon -->
             <div class="menu-icon" id="menuIcon">
                 <span></span>
@@ -60,46 +73,231 @@
                 <div class="overlay-content">
                     <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="resume.html">Resume</a></li>
+                            <li><a href="index.html">Resume</a></li>
                             <li class="submenu">
                                 <ul class="submenu-items">
                                     <li><a href="design-system.html">Design System</a></li>
                                     <li><a href="home-page.html">Home Page</a></li>
                                     <li><a href="payment-groups.html">Payment Groups</a></li>
+                                    <li><a href="get.art.html">Domain Marketplace</a></li>
+                                    <li><a href="ai-image-generation.html">AI Image Generation</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li class="submenu">
+                                <a href="#">Artist's portfolio</a>
+                                <ul class="submenu-items">
+                                    <!-- <li><a href="ai-image-generation.html">AI Image Generation</a></li> -->
+                                    <li><a href="#">Digital art</a></li>
+                                    <li><a href="#">WECOSMOS festival</a></li>
+                                    <li><a href="#">STIHIA festival</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contacts-product_designer.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
 
 
-
-
         </nav>
     </header>
-    <main class="index-page">
-        <section class="content">
-                <h1 id="animatedText">Vladislav<br>Dostavalov</h1>
-                <div class="info">
-                    <h3>Senior Product Designer</h3>
-                    <p><strong>Date of Birth:</strong> April 2, 1993</p>
-                    <p><strong>Total experience:</strong> <span id="experience"></span></p>
-                    <p><strong>Seeking:</strong> Senior Product Designer</p>
-                </div>
-                <div>
-                    <p class="index-desc">Senior Product Designer, Creative Producer based in Tashkent, Uzbekistan, <span class="highlight">open&nbsp;to&nbsp;relocation</span>. Extensive design experience across Europe, the UK, US, and Central Asia. An agile design (Lean UX) advocate, I excel in leading design teams, creating comprehensive design systems, and delivering innovative fintech, UX/UI, arts, and game development solutions. Proven track record in driving user-centered and iterative design processes to achieve impactful product outcomes.</p>
-                </div>
+    <main class="resume-page">
+        <article>
+            <section class="">
+                <h3>Vladislav Dostavalov</h3>
+                <h1>Senior Product<br>Designer</h1>
+                <span></span>
+                <p class="index-desc">Senior Product Designer based in Tashkent, Uzbekistan, <span class="highlight">open&nbsp;to&nbsp;relocation</span>. Extensive design experience across Europe, the UK, US, and Central Asia. An agile design (Lean UX) advocate, I excel in leading design teams, creating comprehensive design systems, and delivering innovative fintech, UX/UI, arts, and game development solutions. Proven track record in driving user-centered and iterative design processes to achieve impactful product outcomes.</p>
                 <ul class="highlighted-list">
                     <h3>Case Studies</h3>
                     <li><a href="design-system.html">Development of a <span class="highlight">Design System</span> →</a></li>
                     <li><a href="home-page.html">Redesign of the App's <span class="highlight">Home Page</span> →</a></li>
                     <li><a href="payment-groups.html">Payment <span class="highlight">Groups</span> →</a></li>
+                    <li><a href="payment-groups.html">Domain Martkeplace <span class="highlight">GET.ART</span> →</a></li>
+                    <li><a href="payment-groups.html">AI <span class="highlight">Image Generation</span> System →</a></li>
                 </ul>
-                <img src="img/photo2.png" alt="Vladislav Dostavalov" class="profile-photo">
-        </section>
+                <img src="img/ds-process_component-structure.png" alt="DS Components" class="ds-components parallax-image" data-speed="-0.01" >
+                <img src="img/pg-overview-phone2.png" alt="My Home" class="my-home parallax-image" data-speed="0.015" >
+                <img src="img/hp-features-phone2.png" alt="Main Screen" class="main-screen parallax-image" data-speed="-0.02" >
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <!-- Левая колонка -->
+                    <div class="skills-left">
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                        </div>
+                        <div class="skill-name">Figma</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">Design System Architecture</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">Prototyping</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                        </div>
+                        <div class="skill-name">UX Research</div>
+                      </div>
+                      
+                      <div class="circle-item">
+                        <div class="circle"></div>
+                        <span>Leadership &amp; Team Management</span>
+                      </div>
+                      <div class="circle-item">
+                        <div class="circle"></div>
+                        <span>Business-User Balance</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Правая колонка -->
+                    <div class="skills-right">
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">AI tools</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">3D Design</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">HTML, CSS</div>
+                      </div>
+                      <div class="skill-item">
+                        <div class="skill-bar">
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot filled"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                          <span class="bar-dot grey"></span>
+                        </div>
+                        <div class="skill-name">Python &amp; JS</div>
+                      </div>
+                      
+                      <div class="circle-item">
+                        <div class="circle"></div>
+                        <span>Knowing and using Agile, Scrum</span>
+                      </div>
+                      <div class="circle-item">
+                        <div class="circle"></div>
+                        <span>Motivation &amp; Stress Resistance</span>
+                      </div>
+                    </div>
+                  </div>
+            </section>
+            <section id="professional-experience">
+                <h2>Professional Experience</h2>
+                <div class="experience">
+                    <h3>Click</h3>
+                    <h4 class="margin-b-s">Senior Product Designer | August 2024 – Present</h4>
+                    <ul class="margin-b-m">
+                        <li>Responsible for Design System in B2B team.</li>
+                        <li>Launched an image generation syste, as an internal service.</li>
+                        <li>Developed a custom Figma plugin for exporing layouts in JSON file.</li>
+                    </ul>
+                    <h3>Anorbank</h3>
+                    <h4 class="margin-b-s">Senior Product Designer | April 2023 – July 2024</h4>
+                    <ul class="margin-b-m">
+                        <li>Developed a comprehensive <a href="design-system.html">Design System</a>.</li>
+                        <li>Conducted UX research to inform strategies.</li>
+                        <li>Led app products from concept to release.</li>
+                    </ul>
+                    <p class="margin-b-s"><strong>Achievements:</strong></p>
+                    <ul class="margin-b-m">
+                        <li>Promoted within six months.</li>
+                        <li>Completed Product Management course by Tinkoff Bank leading Product Manager.</li>
+                        <li>Achieved KPI targets.</li>
+                        <li>Developed custom Figma plugins that dramatically reduced design delivery times.</li>
+                        <li>Planned and executed <a href="home-page.html">app redesigns</a>, presenting to C-level executives.</li>
+                    </ul>
+                    <h3>.ART</h3>
+                    <h4 class="margin-b-s">UX/UI Designer | November 2017 – December 2021</h4>
+                    <ul class="margin-b-m">
+                        <li>Developed UI/UX for digital services.</li>
+                        <li>Created extensive UI kit.</li>
+                        <li>Collaborated with international partners.</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="additional-experience">
+                <h2>Additional Experience</h2>
+                <div class="experience">
+                    <h3>moc creative</h3>
+                    <h4 class="margin-b-s">Creative Producer / Art Director | September 2019 – May 2023</h4>
+                    <ul class="margin-b-m">
+                        <li>Founded and directed WeCosmos festival.</li>
+                        <li>Managed Mixed Art Hackathon.</li>
+                        <li>Directed moc fest and Stihia festival.</li>
+                        <li>Developed commercial and immersive projects.</li>
+                    </ul>
+                    <h3>SAB Games</h3>
+                    <h4 class="margin-b-s">Art Director, UX/UI Designer | December 2015 – November 2017</h4>
+                    <ul class="margin-b-m">
+                        <li>Directed design for mobile games and apps.</li>
+                        <li>Managed a team of illustrators.</li>
+                        <li>Organized Central Asia's first gaming hackathon.</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="other-experience">
+                <h2>Other Experience</h2>
+                <ul>
+                    <li class="margin-b-s"><strong>Goethe Institut</strong> <em>Art Director and VR Developer | July 2020 – November 2020</em></li>
+                    <li class="margin-b-s"><strong>WCH</strong> <em>Web UI Designer | November 2014 – November 2015</em></li>
+                    <li class="margin-b-s"><strong>Genesis</strong> <em>Art Director | June 2014 – October 2014</em></li>
+                    <li class="margin-b-s"><strong>Sky7</strong> <em>Web Designer | June 2013 – September 2013</em></li>
+                </ul>
+            </section>
+            <section id="additional-information">
+                <h2>Additional Information</h2>
+                <p style="max-width: 480px;">Strategically executed app redesigns, conducted competitor analysis, and developed new features. Collaborated with front-end developers, product managers, QA, and marketing teams to ensure cohesive product development. Mentored the design team by conducting weekly brainstorms and design reviews. Positively impacted user engagement metrics by increasing average session duration from 3 to 4.5 minutes. Helped reduce design delivery times by ~37.5%. Effectively presented and defended design concepts to C-level executives.</p>
+            </section>
+        </article>
     </main>
     <script src="script.js"></script>
 </body>
