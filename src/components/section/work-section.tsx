@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +11,7 @@ import { DATA } from "@/data/resume";
 import { ChevronDown, ChevronRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useFullAccess } from "@/hooks/use-full-access";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -32,6 +33,18 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function WorkSection() {
+  const fullAccess = useFullAccess();
+
+  const unlistedHrefs = useMemo(
+    () =>
+      new Set(
+        DATA.projects
+          .filter((p) => "unlisted" in p && p.unlisted)
+          .map((p) => p.href)
+      ),
+    []
+  );
+
   return (
     <Accordion type="single" collapsible className="w-full grid gap-6">
       {DATA.work.map((work) => (
@@ -79,9 +92,13 @@ export default function WorkSection() {
           </AccordionTrigger>
           <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
             <p>{work.description}</p>
-            {"relatedProjects" in work && work.relatedProjects && (
+            {"relatedProjects" in work && work.relatedProjects && (() => {
+              const visible = (work.relatedProjects as readonly { title: string; href: string; image: string }[])
+                .filter((p) => fullAccess || !unlistedHrefs.has(p.href));
+              if (visible.length === 0) return null;
+              return (
               <div className="flex gap-3 mt-4 overflow-x-auto">
-                {(work.relatedProjects as readonly { title: string; href: string; image: string }[]).map((project) => (
+                {visible.map((project) => (
                   <Link
                     key={project.href}
                     href={project.href}
@@ -103,7 +120,8 @@ export default function WorkSection() {
                   </Link>
                 ))}
               </div>
-            )}
+              );
+            })()}
           </AccordionContent>
         </AccordionItem>
       ))}
