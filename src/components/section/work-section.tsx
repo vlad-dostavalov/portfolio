@@ -37,10 +37,10 @@ export default function WorkSection() {
 
   const unlistedHrefs = useMemo(
     () =>
-      new Set(
+      new Set<string>(
         DATA.projects
           .filter((p) => "unlisted" in p && p.unlisted)
-          .map((p) => p.href)
+          .map((p) => p.href as string)
       ),
     []
   );
