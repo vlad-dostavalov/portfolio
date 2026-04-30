@@ -11,9 +11,12 @@ type OverviewItem = {
 };
 
 type CaseSection = {
+  eyebrow?: string;
   title: string;
   body?: string[];
   bullets?: string[];
+  cards?: CaseSection[];
+  contained?: boolean;
 };
 
 export type ToolingCase = {
@@ -23,11 +26,7 @@ export type ToolingCase = {
   cover: string;
   coverAlt: string;
   overview: OverviewItem[];
-  challenge: string[];
-  solution: string[];
-  features: CaseSection[];
-  architecture: CaseSection[];
-  impact: string[];
+  sections: CaseSection[];
   previous?: {
     title: string;
     href: string;
@@ -80,48 +79,13 @@ export function ToolingCasePage({ project }: { project: ToolingCase }) {
         />
       </BlurFade>
 
-      <BlurFade delay={D * 4}>
-        <TextSection title="Why this existed" paragraphs={project.challenge} />
-      </BlurFade>
+      {project.sections.map((section, index) => (
+        <BlurFade key={section.title} delay={D * (index + 4)}>
+          <StorySection section={section} />
+        </BlurFade>
+      ))}
 
-      <BlurFade delay={D * 5}>
-        <TextSection title="What I built" paragraphs={project.solution} />
-      </BlurFade>
-
-      <BlurFade delay={D * 6}>
-        <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bold">What made it useful</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {project.features.map((feature) => (
-              <FeatureBlock key={feature.title} section={feature} />
-            ))}
-          </div>
-        </div>
-      </BlurFade>
-
-      <BlurFade delay={D * 7}>
-        <div className="flex flex-col gap-4 rounded-xl border bg-muted/30 p-6">
-          <h2 className="text-xl font-bold">How it worked</h2>
-          <div className="grid gap-4">
-            {project.architecture.map((section) => (
-              <FeatureBlock key={section.title} section={section} />
-            ))}
-          </div>
-        </div>
-      </BlurFade>
-
-      <BlurFade delay={D * 8}>
-        <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Outcome</h2>
-          <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-            {project.impact.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </BlurFade>
-
-      <BlurFade delay={D * 9}>
+      <BlurFade delay={D * (project.sections.length + 4)}>
         <div className="flex items-center justify-between gap-4 border-t pt-4">
           {project.previous ? (
             <Link
@@ -159,21 +123,48 @@ export function ToolingCasePage({ project }: { project: ToolingCase }) {
   );
 }
 
-function TextSection({
-  title,
-  paragraphs,
-}: {
-  title: string;
-  paragraphs: string[];
-}) {
-  return (
-    <div className="flex flex-col gap-3">
-      <h2 className="text-xl font-bold">{title}</h2>
-      {paragraphs.map((paragraph) => (
+function StorySection({ section }: { section: CaseSection }) {
+  const content = (
+    <>
+      <div className="flex flex-col gap-2">
+        {section.eyebrow ? (
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {section.eyebrow}
+          </p>
+        ) : null}
+        <h2 className="text-xl font-bold">{section.title}</h2>
+      </div>
+      {section.body?.map((paragraph) => (
         <p key={paragraph} className="leading-relaxed text-muted-foreground">
           {paragraph}
         </p>
       ))}
+      {section.bullets ? (
+        <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+          {section.bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      ) : null}
+      {section.cards ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {section.cards.map((card) => (
+            <FeatureBlock key={card.title} section={card} />
+          ))}
+        </div>
+      ) : null}
+    </>
+  );
+
+  return (
+    <div
+      className={
+        section.contained
+          ? "flex flex-col gap-4 rounded-xl border bg-muted/30 p-6"
+          : "flex flex-col gap-4"
+      }
+    >
+      {content}
     </div>
   );
 }
