@@ -176,7 +176,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       description:
-        "Built a Figma intelligence engine that audits design systems, generates semantic metadata, and powers a connected ecosystem of companion widgets and plugins.",
+        "Built a Figma intelligence layer that audits design systems, captures semantic metadata, and gives teams a shared source of truth for component status, usage, and documentation.",
       technologies: [
         "Figma Plugin",
         "Design Systems",
@@ -193,7 +193,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       description:
-        "Created an on-canvas Figma widget for live component documentation, status tracking, implementation type, and collaborative changelogs.",
+        "Created an on-canvas Figma widget that keeps component documentation, status, implementation type, and changelog visible exactly where designers and developers work.",
       technologies: [
         "Figma Widget",
         "Design Systems",
@@ -210,7 +210,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       description:
-        "Designed and built an interactive component index for large Figma files, with search, filtering, status badges, and instant jump navigation.",
+        "Designed and built a searchable table of contents for massive Figma files, helping teams find components, understand status, and jump across the canvas instantly.",
       technologies: [
         "Figma Widget",
         "Navigation",
@@ -227,7 +227,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       description:
-        "Built a Figma plugin for trait-based deep selection, saved selections, and logical selection combinations inside complex component sets.",
+        "Built a Figma plugin that selects deeply nested layers by traits, saves complex selections, and makes large component refactors faster and less error-prone.",
       technologies: [
         "Figma Plugin",
         "Internal Tooling",

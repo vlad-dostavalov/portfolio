@@ -81,16 +81,16 @@ export function ToolingCasePage({ project }: { project: ToolingCase }) {
       </BlurFade>
 
       <BlurFade delay={D * 4}>
-        <TextSection title="Challenge" paragraphs={project.challenge} />
+        <TextSection title="Why this existed" paragraphs={project.challenge} />
       </BlurFade>
 
       <BlurFade delay={D * 5}>
-        <TextSection title="Solution" paragraphs={project.solution} />
+        <TextSection title="What I built" paragraphs={project.solution} />
       </BlurFade>
 
       <BlurFade delay={D * 6}>
         <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bold">Key Features</h2>
+          <h2 className="text-xl font-bold">What made it useful</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {project.features.map((feature) => (
               <FeatureBlock key={feature.title} section={feature} />
@@ -101,7 +101,7 @@ export function ToolingCasePage({ project }: { project: ToolingCase }) {
 
       <BlurFade delay={D * 7}>
         <div className="flex flex-col gap-4 rounded-xl border bg-muted/30 p-6">
-          <h2 className="text-xl font-bold">Technical Architecture</h2>
+          <h2 className="text-xl font-bold">How it worked</h2>
           <div className="grid gap-4">
             {project.architecture.map((section) => (
               <FeatureBlock key={section.title} section={section} />
@@ -112,7 +112,7 @@ export function ToolingCasePage({ project }: { project: ToolingCase }) {
 
       <BlurFade delay={D * 8}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Impact</h2>
+          <h2 className="text-xl font-bold">Outcome</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             {project.impact.map((item) => (
               <li key={item}>{item}</li>

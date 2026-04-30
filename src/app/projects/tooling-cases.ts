@@ -3,7 +3,7 @@ import type { ToolingCase } from "./tooling-case-page";
 export const principalCase: ToolingCase = {
   title: "Principal",
   subtitle:
-    "A design system intelligence engine for auditing, documenting, and scaling complex Figma libraries.",
+    "A Figma intelligence layer that turns a design system from a static component library into something the team can audit, document, navigate, and eventually automate.",
   tags: ["Design Systems", "AI & LLMs", "Automation", "Figma Plugin"],
   cover: "/projects/cover_principal.svg",
   coverAlt: "Principal ecosystem overview",
@@ -13,63 +13,63 @@ export const principalCase: ToolingCase = {
     { label: "Focus", value: "Semantic Design System Infrastructure" },
   ],
   challenge: [
-    "In large-scale, long-term design projects, the hard part is not only creating a component library. The harder job is preserving consistency, design intent, and team knowledge across thousands of files and many contributors.",
-    "Critical rules usually live in people's heads, scattered documentation, or one-off comments. That makes the system fragile: audits are manual, onboarding is slow, and AI-assisted workflows have no reliable map of what the design system actually means.",
+    "Large design systems rarely fail because somebody forgot to draw another button state. They fail more quietly: rules become tribal knowledge, component usage drifts, documentation falls behind, and nobody can confidently answer what is actually used in production-facing files.",
+    "I kept seeing the same pattern. Designers had to manually inspect files, developers had to ask whether a component was ready, and any AI-assisted workflow was basically blind because Figma nodes do not explain intent. A rectangle might be part of a primary action, a broken override, or just visual noise. The system needed a memory.",
   ],
   solution: [
-    "Principal turns the design system into a semantic knowledge layer. It analyzes Figma files, audits usage, documents components, and creates structured metadata that can be used by designers, developers, widgets, and AI agents.",
-    "Instead of treating components as static UI assets, Principal treats them as a living system with rules, statuses, relationships, and implementation context.",
+    "Principal became that memory. I designed and built it as a Figma plugin ecosystem that scans design system and product files, detects inconsistencies, collects usage data, and writes a structured semantic layer back into the file.",
+    "The important shift was treating design data more like product infrastructure. Components were no longer just visual assets; they had status, rules, relationships, usage patterns, documentation, and metadata that other tools could read.",
   ],
   features: [
     {
-      title: "Automated Audits & Auto-Fix",
+      title: "Design System Audits",
       body: [
-        "The plugin scans product files for inconsistencies, detached instances, outdated styles, and component usage problems, then provides targeted fixes to bring layouts back into alignment.",
+        "Principal scans files for detached instances, outdated styles, suspicious overrides, naming problems, and drift from the source library. The goal was not to shame designers with a giant error list, but to make cleanup specific, fast, and fixable.",
       ],
     },
     {
-      title: "Usage Analytics",
+      title: "Component Usage Analytics",
       body: [
-        "Principal gives the team visibility into how components are used across the product ecosystem, making maintenance decisions grounded in real usage instead of guesswork.",
+        "The plugin shows which components are actually used, where they appear, and which patterns are quietly becoming obsolete. That makes backlog decisions less political and more grounded in real product work.",
       ],
     },
     {
-      title: "AI-Driven Documentation",
+      title: "AI-Assisted Documentation",
       body: [
-        "LLM-assisted analysis turns component structure into practical documentation, implementation notes, and design rules that are easier for the team to maintain.",
+        "I used LLMs to help read component structure and turn it into practical documentation: what the component is for, how it should be used, and what rules matter for implementation.",
       ],
     },
     {
-      title: "Semantic Layer Generation",
+      title: "Semantic Registry",
       body: [
-        "The plugin creates a metadata map of the design system so companion tools and future AI agents can understand not just what exists, but what each part is for.",
+        "Principal generates a machine-readable map of the design system. That registry became the backbone for companion tools like ComponentCard and ComponentsNav.",
       ],
     },
   ],
   architecture: [
     {
-      title: "Ecosystem Data Model",
+      title: "Figma as a Data Source",
       body: [
-        "Principal acts as the central scanner and semantic engine. Its output powers companion tools such as DevPal, ComponentCard, and ComponentsNav.",
+        "The plugin reads components, variants, styles, descriptions, and sharedPluginData, then normalizes that information into a registry that can power audits, documentation, navigation, and handoff workflows.",
       ],
     },
     {
-      title: "AI Integration",
+      title: "AI With Design Context",
       body: [
-        "The system uses AI models to interpret design intent, making it possible to reason about components as meaningful product patterns rather than raw Figma nodes.",
+        "The AI layer is useful because it receives structured context from the file. It can reason about design intent, component patterns, and system rules instead of guessing from isolated layer names.",
       ],
     },
     {
-      title: "AI-Assisted Development Workflow",
+      title: "Ecosystem Architecture",
       body: [
-        "I used AI-assisted development to move quickly from concept to a multi-tool ecosystem, focusing my time on the architecture, product logic, and Figma API behavior.",
+        "Principal is the engine, while DevPal, ComponentCard, and ComponentsNav are focused interfaces on top of the same metadata. This kept each tool simple while making the whole ecosystem feel connected.",
       ],
     },
   ],
   impact: [
-    "Reduced the manual overhead of design system maintenance by over 60%.",
-    "Made complex system rules easier to discover for new designers through on-canvas and plugin-based tools.",
-    "Created the foundation for future AI-driven design automation by giving the system a machine-readable semantic layer.",
+    "Reduced manual design system maintenance work by more than 60% by replacing repeated inspections with structured scans and targeted fixes.",
+    "Gave designers, developers, and product teams a shared source of truth for component status, usage, and rules.",
+    "Created a foundation for AI-driven design automation by giving agents the context they need to understand the design system instead of merely looking at shapes.",
   ],
   previous: { title: "Unified Frontend System", href: "/projects/unified-frontend-system" },
   next: { title: "ComponentCard Widget", href: "/projects/component-card-widget" },
@@ -78,7 +78,7 @@ export const principalCase: ToolingCase = {
 export const componentCardCase: ToolingCase = {
   title: "ComponentCard Widget",
   subtitle:
-    "A live documentation and status card that keeps component metadata directly on the Figma canvas.",
+    "A Figma widget that keeps component documentation, status, implementation type, and changelog exactly where the team makes decisions: on the canvas.",
   tags: ["Figma Widget", "Design Systems", "Documentation", "Handoff"],
   cover: "/projects/cover_component-card.svg",
   coverAlt: "ComponentCard widget interface",
@@ -88,63 +88,63 @@ export const componentCardCase: ToolingCase = {
     { label: "Focus", value: "On-canvas Documentation & Status Tracking" },
   ],
   challenge: [
-    "In mature design systems, a component carries more than visuals: status, implementation type, version history, developer notes, and context around why it changed.",
-    "That context is often split between Jira, Notion, documentation sites, hidden layers, sticky notes, and Figma version history. The result is context switching, stale notes, and weak accountability.",
+    "A mature component carries a lot of context: design status, development status, implementation type, version history, notes, and all the small decisions that explain why it looks the way it does.",
+    "The problem is that this context usually lives everywhere except next to the component. Jira has one part, Notion has another, Figma descriptions are easy to miss, and canvas notes become outdated almost immediately. During handoff, people still ask the same basic questions: is this ready, what changed, who changed it, and should devs use it?",
   ],
   solution: [
-    "ComponentCard is an interactive Figma widget that attaches a clean, live metadata card to any component or component set.",
-    "With one click, the widget links to a target component and displays its name, description, design status, development status, implementation type, and localized changelog exactly where the team is working.",
+    "ComponentCard is a live label for a component or component set. You place it beside the component, link it once, and it becomes a compact interface for the metadata the team actually needs.",
+    "I designed it to feel like part of the design system file, not like extra admin work. It gives designers and developers status, description, implementation type, and changelog without forcing them to leave Figma or open another tool.",
   ],
   features: [
     {
-      title: "One-Click Context Linking",
+      title: "One-Click Component Linking",
       body: [
-        "A designer places the widget, selects Link to component, and clicks the target component. The card instantly populates with the component's metadata.",
+        "A user drops the widget on the canvas, clicks Link to component, and selects the target. The card immediately pulls the component name, version context, and Figma description.",
       ],
     },
     {
-      title: "Interactive Status Management",
+      title: "Status Badges That Do Work",
       body: [
-        "Badges are not static labels. Users can update design status and implementation type directly from the widget without opening a separate plugin.",
+        "Design status and implementation type are editable directly from the widget. The badges are not decoration; they are controls for keeping the component's real state up to date.",
       ],
     },
     {
-      title: "Inline Collaborative Changelog",
+      title: "Local Changelog",
       body: [
-        "Team members can add changelog notes from the widget. Each entry stores the author and timestamp, making local component history visible and accountable.",
+        "Anyone can add a note to the component's changelog. The widget stores the author and timestamp so the next person understands what changed without digging through Figma history.",
       ],
     },
     {
-      title: "Development Status Visibility",
+      title: "Design and Dev Visibility",
       body: [
-        "The widget displays engineering progress such as Not Started, In Progress, Partial, and Done, helping design and development stay aligned during handoff.",
+        "The card shows development status alongside design status, making the handoff state visible to both sides instead of hidden in a separate tracking board.",
       ],
     },
   ],
   architecture: [
     {
-      title: "Single Source of Truth",
+      title: "Metadata Lives on the Component",
       body: [
-        "Statuses, implementation type, and changelog entries are stored on the target component node as sharedPluginData, keeping metadata attached to the design object itself.",
+        "Statuses, implementation type, and changelog entries are written to the target component node as sharedPluginData. That keeps the truth attached to the thing it describes.",
       ],
     },
     {
-      title: "Ecosystem Sync",
+      title: "Part of the Principal Ecosystem",
       body: [
-        "Because the data lives on the node, Principal can read it during file-wide scans and ComponentsNav can use it for filtering and status overviews.",
+        "Because the metadata is stored on the node, Principal can include it in audits and ComponentsNav can use it for global filtering and file navigation.",
       ],
     },
     {
-      title: "Responsive Widget Layout",
+      title: "Canvas-Friendly UI",
       body: [
-        "The widget supports customizable widths from 320px to 800px, so it can sit beside components of different sizes without breaking the file layout.",
+        "The widget supports width presets from 320px to 800px, so it can sit next to small components or large component sets without breaking the layout of the design system file.",
       ],
     },
   ],
   impact: [
-    "Removed routine context switching by keeping critical component context visible on the canvas.",
-    "Improved handoff clarity with shared design and development status signals.",
-    "Created a localized changelog that explains who changed a component, when, and why.",
+    "Cut down handoff questions by making component status and implementation context visible at the exact point of work.",
+    "Replaced messy notes and stale external references with a persistent, structured, on-canvas documentation pattern.",
+    "Made component history more accountable: the team could see what changed, when it changed, and why.",
   ],
   previous: { title: "Principal", href: "/projects/principal" },
   next: { title: "ComponentsNav Widget", href: "/projects/components-nav-widget" },
@@ -153,7 +153,7 @@ export const componentCardCase: ToolingCase = {
 export const componentsNavCase: ToolingCase = {
   title: "ComponentsNav Widget",
   subtitle:
-    "An interactive map and status hub for navigating large-scale Figma design system files.",
+    "A searchable table of contents for huge Figma design system files, with instant jump navigation and live component status.",
   tags: ["Figma Widget", "Design Systems", "Navigation", "Productivity"],
   cover: "/projects/cover_components-nav.svg",
   coverAlt: "ComponentsNav widget interface",
@@ -163,63 +163,63 @@ export const componentsNavCase: ToolingCase = {
     { label: "Focus", value: "Design System Wayfinding" },
   ],
   challenge: [
-    "As design system files grow, they become dense maps of pages, frames, components, variants, and wrappers. Finding a specific component can mean endless zooming, panning, and searching through the layers panel.",
-    "Status context is often disconnected from the canvas, while file-level overview is almost nonexistent. Teams need a practical table of contents that lives where the work happens.",
+    "Big design system files become cities. There are pages, component sets, wrappers, private parts, deprecated pieces, experiments, and legacy leftovers. The layers panel is technically accurate, but it is a terrible map.",
+    "Every search, zoom, pan, and double-click adds a small navigation tax. For one person it is annoying; for a team it becomes a constant drag on reviews, audits, onboarding, and developer handoff.",
   ],
   solution: [
-    "ComponentsNav transforms a complex Figma design system file into a searchable, filterable component index directly on the canvas.",
-    "It reads the semantic registry generated by Principal, groups components by page and wrapper frame, and lets users jump to any component while keeping a quick path back to the widget.",
+    "ComponentsNav is an on-canvas index for the whole file. It reads the component registry generated by Principal and turns it into a grouped, searchable, status-aware map.",
+    "The widget answers the questions people actually have in a dense file: what is here, where is it, what state is it in, and how do I get back after jumping across the canvas?",
   ],
   features: [
     {
-      title: "Intelligent Indexing",
+      title: "Structured Component Index",
       body: [
-        "The widget lists components and groups them by Figma Page and top-level wrapper frame, creating an immediate mental model of the file structure.",
+        "Components are grouped by Figma page and top-level wrapper frame, so the index reflects how the file is mentally organized rather than dumping a flat list of names.",
       ],
     },
     {
-      title: "Jump Navigation",
+      title: "Jump and Return Navigation",
       body: [
-        "Clicking a component tile teleports the viewport to the exact component. A temporary Back to widget action helps users return without losing orientation.",
+        "Clicking a tile moves the viewport directly to the component. A temporary Back to widget action prevents the classic Figma problem: arriving somewhere useful and immediately losing your place.",
       ],
     },
     {
-      title: "DevPal Status Management",
+      title: "Status Hub",
       body: [
-        "Each tile displays design and development status badges. Users can cycle statuses from the widget, keeping handoff state visible and current.",
+        "Each component tile displays design and development status badges. Users can update status from the widget, so navigation and handoff tracking live in the same place.",
       ],
     },
     {
-      title: "Smart Search & Filtering",
+      title: "Filtering for Real Files",
       body: [
-        "Client-side search and filters for private or deprecated components keep the index fast, focused, and useful in very large files.",
+        "Search, private component toggles, and deprecated filters keep the view useful when the file contains hundreds of components and not everything should be front and center.",
       ],
     },
   ],
   architecture: [
     {
-      title: "Principal Registry Consumption",
+      title: "Fast Registry Loading",
       body: [
-        "The widget reads the component_registry generated by Principal from sharedPluginData, so it can load quickly without rescanning the entire file.",
+        "ComponentsNav reads Principal's component_registry from sharedPluginData instead of crawling the entire file each time. That makes the widget fast enough to use as a daily navigation surface.",
       ],
     },
     {
       title: "Bidirectional Status Sync",
       body: [
-        "When a user updates a status badge, the widget writes data to the component node and syncs the change to the Principal backend through a hidden iframe.",
+        "Status changes are written back to the component node and synced to the Principal backend through a hidden iframe, keeping the wider ecosystem aligned.",
       ],
     },
     {
-      title: "Large File Performance",
+      title: "Performance for Large Canvases",
       body: [
-        "Pagination and lazy loading keep the widget responsive, loading 20 component tiles at a time and avoiding heavy canvas lag.",
+        "I used pagination and lazy loading, showing 20 tiles at a time, so the widget stays responsive even when the design system file becomes massive.",
       ],
     },
   ],
   impact: [
-    "Turned chaotic component canvases into structured, searchable maps.",
-    "Reduced handoff ambiguity by showing design and development status directly in the file index.",
-    "Demonstrated how Principal's semantic layer can power lightweight, high-value tools on top of the same source of truth.",
+    "Made large Figma files feel navigable instead of chaotic, especially for designers and developers who did not build the file themselves.",
+    "Reduced the time spent hunting for components during audits, reviews, and handoff conversations.",
+    "Proved the value of the Principal semantic layer by turning invisible metadata into a practical daily workflow tool.",
   ],
   previous: { title: "ComponentCard Widget", href: "/projects/component-card-widget" },
   next: { title: "Smart Selection", href: "/projects/smart-selection" },
@@ -228,7 +228,7 @@ export const componentsNavCase: ToolingCase = {
 export const smartSelectionCase: ToolingCase = {
   title: "Smart Selection",
   subtitle:
-    "A Figma plugin for selecting, saving, and combining deeply nested object sets by their traits.",
+    "A Figma plugin for selecting, saving, and combining deeply nested object sets by traits instead of manually chasing layers.",
   tags: ["Figma Plugin", "Productivity", "Internal Tooling", "Automation"],
   cover: "/projects/cover_smart-selection.svg",
   coverAlt: "Smart Selection plugin interface",
@@ -238,63 +238,63 @@ export const smartSelectionCase: ToolingCase = {
     { label: "Focus", value: "Object Selection & Layer Management" },
   ],
   challenge: [
-    "Figma's native selection tools are strong for everyday work, but they become limiting inside large component sets, deeply nested layouts, and messy legacy files.",
-    "Selecting every text layer with a specific style, every icon inside a frame, or a custom subset of nested objects can turn into repetitive manual labor that interrupts design flow.",
+    "Figma is great until you need to surgically select the same kind of object across a large component set. All text layers with a specific style. Every icon in a nested layout. A subset of layers that should be refactored but only inside one branch of the structure.",
+    "Native selection tools are built for visible interaction, not for complex object logic. In real design system work, that means designers lose time to mechanical layer hunting instead of improving the component.",
   ],
   solution: [
-    "Smart Selection gives designers a way to target object arrays by traits instead of manual clicking.",
-    "It works as a selection manager for Figma: users can search deeply through hierarchy, isolate matching objects, save complex selections, and combine them into more advanced refactoring scenarios.",
+    "Smart Selection gives designers a targeting system. Instead of clicking through layers one by one, they define what they are looking for and let the plugin scan the hierarchy.",
+    "I built it as a selection manager, not a one-off utility: users can find objects by traits, save complex selections, recall them later, and combine sets for more advanced refactoring work.",
   ],
   features: [
     {
       title: "Trait-Based Selection",
       body: [
-        "Users can select objects by criteria such as layer type, style, naming pattern, location, or role inside a component structure.",
+        "Users can target objects by layer type, style, name pattern, location, or role inside a component structure. It turns selection into a query instead of a manual hunt.",
       ],
     },
     {
-      title: "Deep Selection",
+      title: "Deep Hierarchy Search",
       body: [
-        "The plugin scans nested groups and auto-layout structures, extracting matching objects without forcing users through repeated double-clicking.",
+        "The plugin scans through nested groups, component sets, and auto-layout structures, finding matching objects no matter how deeply they are buried.",
       ],
     },
     {
-      title: "Save & Recall",
+      title: "Save and Recall",
       body: [
-        "Complex selections can be saved and reopened later, turning temporary manual work into reusable tooling.",
+        "Any complex selection can be saved and reused later, which is especially useful when refactoring component variants over multiple passes.",
       ],
     },
     {
-      title: "Combine Selections",
+      title: "Combine Selection Sets",
       body: [
-        "Saved selections can be combined, intersected, or excluded to support advanced batch operations during component refactoring.",
+        "Saved selections can be combined, intersected, or excluded from each other, making it possible to build precise batch operations without turning the UI into a spreadsheet.",
       ],
     },
   ],
   architecture: [
     {
-      title: "Figma API Scanning",
+      title: "Figma Node Traversal",
       body: [
-        "The plugin traverses selected node trees, filters nodes by user-defined criteria, and returns matching layers as an actionable Figma selection.",
+        "The plugin walks through selected node trees, evaluates each node against user-defined criteria, and returns the matching layers as the active Figma selection.",
       ],
     },
     {
-      title: "Selection Logic Model",
+      title: "Reusable Set Logic",
       body: [
-        "Saved selections are treated as reusable sets, which makes logical operations like combining and excluding possible without overwhelming the UI.",
+        "Selections are stored as reusable sets, which makes combine, intersect, and exclude operations possible while keeping the interface understandable.",
       ],
     },
     {
-      title: "AI-Assisted Build Process",
+      title: "AI-Assisted Development",
       body: [
-        "I used AI-assisted coding to speed up boilerplate and focus on the interaction design, architecture, and Figma API edge cases.",
+        "I used AI coding workflows to move quickly through boilerplate and focus on the hard parts: UX for logical operations, Figma API edge cases, and performance on large node trees.",
       ],
     },
   ],
   impact: [
-    "Reduced repetitive layer-hunting and batch editing tasks from minutes to seconds.",
-    "Made refactoring legacy files and large component sets more controlled and less mentally draining.",
-    "Helped preserve design focus by moving mechanical selection work into a purpose-built tool.",
+    "Turned repetitive selection and batch-editing tasks from minutes of clicking into a few seconds of targeted action.",
+    "Made large component refactors less risky because designers could isolate exactly the objects they intended to change.",
+    "Improved workflow comfort by removing one of the most draining parts of design system maintenance: searching for tiny things inside huge nested structures.",
   ],
   previous: { title: "ComponentsNav Widget", href: "/projects/components-nav-widget" },
   next: { title: "All Projects", href: "/#projects" },
