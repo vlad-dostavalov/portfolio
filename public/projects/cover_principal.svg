@@ -1,0 +1,27 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#0F172A"/>
+  <rect x="72" y="72" width="1056" height="576" rx="28" fill="#F8FAFC"/>
+  <rect x="116" y="120" width="240" height="480" rx="20" fill="#E2E8F0"/>
+  <rect x="148" y="156" width="132" height="18" rx="9" fill="#0F172A"/>
+  <rect x="148" y="210" width="176" height="12" rx="6" fill="#64748B"/>
+  <rect x="148" y="242" width="144" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="148" y="298" width="144" height="40" rx="10" fill="#2563EB"/>
+  <rect x="148" y="358" width="176" height="40" rx="10" fill="#CBD5E1"/>
+  <rect x="148" y="418" width="132" height="40" rx="10" fill="#CBD5E1"/>
+  <rect x="412" y="134" width="332" height="188" rx="22" fill="#DBEAFE"/>
+  <rect x="452" y="174" width="176" height="18" rx="9" fill="#1D4ED8"/>
+  <rect x="452" y="220" width="244" height="12" rx="6" fill="#64748B"/>
+  <rect x="452" y="252" width="204" height="12" rx="6" fill="#64748B"/>
+  <rect x="800" y="134" width="260" height="188" rx="22" fill="#DCFCE7"/>
+  <rect x="836" y="174" width="132" height="18" rx="9" fill="#15803D"/>
+  <rect x="836" y="220" width="180" height="12" rx="6" fill="#64748B"/>
+  <rect x="836" y="252" width="140" height="12" rx="6" fill="#64748B"/>
+  <rect x="412" y="374" width="648" height="178" rx="22" fill="#F1F5F9"/>
+  <circle cx="520" cy="464" r="44" fill="#2563EB"/>
+  <circle cx="736" cy="464" r="44" fill="#22C55E"/>
+  <circle cx="952" cy="464" r="44" fill="#F97316"/>
+  <path d="M564 464H692" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M780 464H908" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <text x="148" y="550" fill="#0F172A" font-family="Arial, sans-serif" font-size="34" font-weight="700">Principal</text>
+  <text x="412" y="610" fill="#64748B" font-family="Arial, sans-serif" font-size="24">Semantic design system intelligence</text>
+</svg>

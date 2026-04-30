@@ -78,6 +78,10 @@ export const DATA = {
         "Leading the design of a unified frontend system for Uzbekistan's largest bank, consolidating multiple internal products into a single high-load web interface. Architecting a proprietary design system with advanced Figma features (slots), focusing on scalability. Developing custom Figma utility plugins (e.g., \"Design Linter\") using AI to automate token management. Driving cross-functional alignment by hosting workshops for devs and analysts.",
       relatedProjects: [
         { title: "Unified Frontend System", href: "/projects/unified-frontend-system", image: "/projects/cover_ufs.png" },
+        { title: "Principal", href: "/projects/principal", image: "/projects/cover_principal.svg" },
+        { title: "ComponentCard Widget", href: "/projects/component-card-widget", image: "/projects/cover_component-card.svg" },
+        { title: "ComponentsNav Widget", href: "/projects/components-nav-widget", image: "/projects/cover_components-nav.svg" },
+        { title: "Smart Selection", href: "/projects/smart-selection", image: "/projects/cover_smart-selection.svg" },
       ],
     },
     {
@@ -130,7 +134,7 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Westminster University",
+      school: "University of Westminster",
       href: "https://www.westminster.ac.uk/about-us/our-university/global-westminster/global-partner-network/westminster-international-university-in-tashkent",
       degree: "BSc Computer Science",
       logoUrl: "/logo_westminster.png",
@@ -164,6 +168,74 @@ export const DATA = {
       ],
       links: [],
       image: "/projects/cover_ufs.png",
+      video: "",
+    },
+    {
+      title: "Principal",
+      href: "/projects/principal",
+      dates: "2025",
+      active: true,
+      description:
+        "Built a Figma intelligence engine that audits design systems, generates semantic metadata, and powers a connected ecosystem of companion widgets and plugins.",
+      technologies: [
+        "Figma Plugin",
+        "Design Systems",
+        "AI & LLMs",
+        "Automation",
+      ],
+      links: [],
+      image: "/projects/cover_principal.svg",
+      video: "",
+    },
+    {
+      title: "ComponentCard Widget",
+      href: "/projects/component-card-widget",
+      dates: "2025",
+      active: true,
+      description:
+        "Created an on-canvas Figma widget for live component documentation, status tracking, implementation type, and collaborative changelogs.",
+      technologies: [
+        "Figma Widget",
+        "Design Systems",
+        "Documentation",
+        "Handoff",
+      ],
+      links: [],
+      image: "/projects/cover_component-card.svg",
+      video: "",
+    },
+    {
+      title: "ComponentsNav Widget",
+      href: "/projects/components-nav-widget",
+      dates: "2025",
+      active: true,
+      description:
+        "Designed and built an interactive component index for large Figma files, with search, filtering, status badges, and instant jump navigation.",
+      technologies: [
+        "Figma Widget",
+        "Navigation",
+        "Design Systems",
+        "Productivity",
+      ],
+      links: [],
+      image: "/projects/cover_components-nav.svg",
+      video: "",
+    },
+    {
+      title: "Smart Selection",
+      href: "/projects/smart-selection",
+      dates: "2025",
+      active: true,
+      description:
+        "Built a Figma plugin for trait-based deep selection, saved selections, and logical selection combinations inside complex component sets.",
+      technologies: [
+        "Figma Plugin",
+        "Internal Tooling",
+        "Automation",
+        "Productivity",
+      ],
+      links: [],
+      image: "/projects/cover_smart-selection.svg",
       video: "",
     },
     {
