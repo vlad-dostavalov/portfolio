@@ -72,6 +72,87 @@ export const principalCase: ToolingCase = {
     "Created a foundation for AI-driven design automation by giving agents the context they need to understand the design system instead of merely looking at shapes.",
   ],
   previous: { title: "Unified Frontend System", href: "/projects/unified-frontend-system" },
+  next: { title: "DevPal", href: "/projects/devpal" },
+};
+
+export const devPalCase: ToolingCase = {
+  title: "DevPal",
+  subtitle:
+    "A Figma Dev Mode plugin that turns component handoff from scattered conversations into a shared, trackable workflow for design system teams and frontend developers.",
+  tags: ["Figma Dev Mode", "Developer Handoff", "Design Systems", "Workflow Tooling"],
+  cover: "/projects/cover_devpal.svg",
+  coverAlt: "DevPal Dev Mode handoff interface",
+  overview: [
+    { label: "Role", value: "Product Designer, Plugin Architect & Developer" },
+    { label: "Project Type", value: "Figma Dev Mode Plugin" },
+    { label: "Focus", value: "Component Governance & Design-to-Dev Workflow" },
+  ],
+  challenge: [
+    "Dev Mode gives developers specs, tokens, and component anatomy. What it does not solve is the operational question developers ask before writing code: is this component actually safe to build?",
+    "In a living design system, that answer is rarely visible in one place. Design status may be in Figma, implementation progress in Jira or GitHub, notes in Slack, and rules in documentation. A component can look finished while its context is stale, partially implemented, or recently changed.",
+  ],
+  solution: [
+    "I designed DevPal as the missing handoff layer inside Figma Dev Mode. When a developer selects a component, DevPal shows its design status, development status, component type, version, code path, and changelog in one compact panel.",
+    "The product idea is intentionally focused: keep the truth about component readiness attached to the component and visible at the exact moment when design becomes implementation.",
+  ],
+  features: [
+    {
+      title: "Separate Design and Dev Status",
+      body: [
+        "A single component status is too vague. DevPal separates design readiness from implementation progress, so a component can be Ready for Dev, In Progress, Fully Implemented, or flagged as changed after development already started.",
+      ],
+    },
+    {
+      title: "Stale Implementation Warning",
+      body: [
+        "If design changes after a component was partially or fully implemented, DevPal compares timestamps and warns that the component may require rework. This is the small interaction that makes the plugin operational, not just informational.",
+      ],
+    },
+    {
+      title: "Component-Level Changelog",
+      body: [
+        "Each meaningful change can be logged with author and timestamp. The changelog keeps context close to the component instead of forcing developers to reconstruct history from comments, Slack threads, or tickets.",
+      ],
+    },
+    {
+      title: "Global Changelog View",
+      body: [
+        "When no component is selected, DevPal becomes a lightweight release-awareness tool with search, author filters, component type filters, date ranges, and navigation back to components where possible.",
+      ],
+    },
+  ],
+  architecture: [
+    {
+      title: "Hybrid Persistence",
+      body: [
+        "DevPal writes component state to Figma sharedPluginData first, then syncs with the Principal backend API when authentication and network access are available. This keeps the plugin useful even when remote sync is unavailable.",
+      ],
+    },
+    {
+      title: "Canonical Component Records",
+      body: [
+        "The plugin resolves component sets, variants, and instances to one canonical component record, preventing every variant or instance from accidentally developing its own conflicting status history.",
+      ],
+    },
+    {
+      title: "Practical Conflict Handling",
+      body: [
+        "Local and remote data are merged by timestamp: newer design status wins for design state, newer dev status wins for implementation state, and changelog entries merge by ID. If local data is newer, DevPal pushes the merged result back to the backend.",
+      ],
+    },
+    {
+      title: "Access Control",
+      body: [
+        "The first editor can approve or reject later users. Non-editors can still inspect component truth, but cannot rewrite status data, which keeps shared handoff information trustworthy.",
+      ],
+    },
+  ],
+  impact: [
+    "Moved component readiness out of scattered handoff channels and into the developer's actual inspection workflow.",
+    "Reduced ambiguity between design intent and implementation progress by making both status tracks visible together.",
+    "Created a developer-facing companion for the Principal ecosystem, connecting semantic design system intelligence to day-to-day frontend work.",
+  ],
+  previous: { title: "Principal", href: "/projects/principal" },
   next: { title: "ComponentCard Widget", href: "/projects/component-card-widget" },
 };
 
@@ -146,7 +227,7 @@ export const componentCardCase: ToolingCase = {
     "Replaced messy notes and stale external references with a persistent, structured, on-canvas documentation pattern.",
     "Made component history more accountable: the team could see what changed, when it changed, and why.",
   ],
-  previous: { title: "Principal", href: "/projects/principal" },
+  previous: { title: "DevPal", href: "/projects/devpal" },
   next: { title: "ComponentsNav Widget", href: "/projects/components-nav-widget" },
 };
 

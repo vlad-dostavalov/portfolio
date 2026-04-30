@@ -1,0 +1,27 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#0F172A"/>
+  <rect x="72" y="72" width="1056" height="576" rx="28" fill="#F8FAFC"/>
+  <rect x="112" y="126" width="548" height="466" rx="24" fill="#E2E8F0"/>
+  <rect x="154" y="174" width="176" height="18" rx="9" fill="#0F172A"/>
+  <rect x="154" y="226" width="332" height="14" rx="7" fill="#64748B"/>
+  <rect x="154" y="262" width="276" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="154" y="342" width="168" height="104" rx="18" fill="#DBEAFE"/>
+  <rect x="352" y="342" width="168" height="104" rx="18" fill="#DCFCE7"/>
+  <rect x="154" y="488" width="430" height="56" rx="16" fill="#CBD5E1"/>
+  <rect x="720" y="126" width="336" height="466" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="4"/>
+  <rect x="756" y="166" width="124" height="18" rx="9" fill="#0F172A"/>
+  <rect x="756" y="218" width="252" height="44" rx="12" fill="#F1F5F9"/>
+  <circle cx="784" cy="240" r="8" fill="#22C55E"/>
+  <rect x="808" y="234" width="120" height="12" rx="6" fill="#64748B"/>
+  <rect x="756" y="292" width="252" height="44" rx="12" fill="#F1F5F9"/>
+  <circle cx="784" cy="314" r="8" fill="#2563EB"/>
+  <rect x="808" y="308" width="144" height="12" rx="6" fill="#64748B"/>
+  <rect x="756" y="366" width="252" height="70" rx="14" fill="#FFEDD5"/>
+  <path d="M778 394L790 406L812 382" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="828" y="386" width="140" height="12" rx="6" fill="#9A3412"/>
+  <rect x="756" y="478" width="252" height="66" rx="14" fill="#F1F5F9"/>
+  <rect x="784" y="502" width="168" height="12" rx="6" fill="#64748B"/>
+  <path d="M660 360H720" stroke="#2563EB" stroke-width="8" stroke-linecap="round"/>
+  <text x="154" y="598" fill="#0F172A" font-family="Arial, sans-serif" font-size="34" font-weight="700">DevPal</text>
+  <text x="720" y="626" fill="#64748B" font-family="Arial, sans-serif" font-size="24">Component readiness in Dev Mode</text>
+</svg>

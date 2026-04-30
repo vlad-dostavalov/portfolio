@@ -79,6 +79,7 @@ export const DATA = {
       relatedProjects: [
         { title: "Unified Frontend System", href: "/projects/unified-frontend-system", image: "/projects/cover_ufs.png" },
         { title: "Principal", href: "/projects/principal", image: "/projects/cover_principal.svg" },
+        { title: "DevPal", href: "/projects/devpal", image: "/projects/cover_devpal.svg" },
         { title: "ComponentCard Widget", href: "/projects/component-card-widget", image: "/projects/cover_component-card.svg" },
         { title: "ComponentsNav Widget", href: "/projects/components-nav-widget", image: "/projects/cover_components-nav.svg" },
         { title: "Smart Selection", href: "/projects/smart-selection", image: "/projects/cover_smart-selection.svg" },
@@ -185,6 +186,23 @@ export const DATA = {
       ],
       links: [],
       image: "/projects/cover_principal.svg",
+      video: "",
+    },
+    {
+      title: "DevPal",
+      href: "/projects/devpal",
+      dates: "2025",
+      active: true,
+      description:
+        "Designed and built a Figma Dev Mode plugin that makes component readiness, implementation progress, code paths, and changelogs visible during developer handoff.",
+      technologies: [
+        "Figma Dev Mode",
+        "Developer Handoff",
+        "Design Systems",
+        "Workflow Tooling",
+      ],
+      links: [],
+      image: "/projects/cover_devpal.svg",
       video: "",
     },
     {
