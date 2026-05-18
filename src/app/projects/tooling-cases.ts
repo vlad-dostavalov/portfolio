@@ -28,6 +28,18 @@ export const principalCase: ToolingCase = {
         "Principal performs deep analysis of design system and product files, then writes structured metadata back into the file. The output becomes a semantic registry that other tools can read instead of re-parsing the canvas every time.",
         "This made the project bigger than a plugin UI. It became infrastructure for audits, documentation, navigation, handoff, and future AI-assisted design tasks.",
       ],
+      images: [
+        {
+          src: "/projects/plugin_principal_01.png",
+          alt: "Principal component analysis screen",
+          caption: "Component analysis view: structure, tokens, search keywords, and detected metadata for a selected component.",
+        },
+        {
+          src: "/projects/plugin_principal_02.png",
+          alt: "Principal system health screen",
+          caption: "System health screen with component inventory and detected issues across the design system.",
+        },
+      ],
     },
     {
       eyebrow: "Product value",
@@ -65,6 +77,18 @@ export const principalCase: ToolingCase = {
       body: [
         "I deliberately avoided building one oversized dashboard. Principal acts as the engine, while DevPal, ComponentCard, and ComponentsNav expose the same data in the moments where people need it.",
         "That architecture kept each interface small: developers see handoff status in Dev Mode, designers see documentation on the canvas, and teams get a navigable index inside dense files.",
+      ],
+      images: [
+        {
+          src: "/projects/plugin_principal_03.png",
+          alt: "Principal AI chat screen",
+          caption: "AI chat mode built on top of the same semantic layer, so questions about the design system are grounded in file context.",
+        },
+        {
+          src: "/projects/plugin_principal_04.png",
+          alt: "Principal scan progress screen",
+          caption: "Scan flow for selecting pages and generating the component registry used by the companion tools.",
+        },
       ],
     },
     {
@@ -108,6 +132,13 @@ export const devPalCase: ToolingCase = {
       body: [
         "When a developer selects a component, DevPal shows component type, design status, dev status, version, code path, and changelog. The UI is intentionally quiet and Dev Mode-native: fast to scan, fast to update, and not trying to become another project management tool.",
       ],
+      images: [
+        {
+          src: "/projects/plugin_devpal_01.png",
+          alt: "DevPal status panel in Figma Dev Mode",
+          caption: "Component status panel inside Dev Mode: type, design status, dev status, version, path, changelog, and access control.",
+        },
+      ],
       cards: [
         {
           title: "Separate Design and Dev Status",
@@ -141,6 +172,13 @@ export const devPalCase: ToolingCase = {
       body: [
         "The hardest product question was not what data to show, but how to make developers trust it. I added editor permissions, read-only states, sync indicators, and timestamped metadata so people could understand whether they were looking at local, synced, or offline data.",
         "The first user becomes an editor, later users request access, and non-editors can still inspect status without being able to rewrite shared handoff data.",
+      ],
+      images: [
+        {
+          src: "/projects/plugin_devpal_02.png",
+          alt: "DevPal global changelog screen",
+          caption: "Global changelog mode with search, filters, status history, and recent component updates.",
+        },
       ],
     },
     {
@@ -198,6 +236,13 @@ export const componentCardCase: ToolingCase = {
       body: [
         "ComponentCard sits beside a component or component set. With one click, it links to the target and pulls the component name, version context, and Figma description into a standardized card.",
         "It is not just a documentation block. The badges are editable controls, the changelog is collaborative, and the data feeds the wider Principal ecosystem.",
+      ],
+      images: [
+        {
+          src: "/projects/plugin_component-card.png",
+          alt: "ComponentCard widget attached to a component",
+          caption: "On-canvas widget showing component title, statuses, changelog, and a linked documentation block next to the actual component.",
+        },
       ],
     },
     {
@@ -281,6 +326,13 @@ export const componentsNavCase: ToolingCase = {
         "The widget reads Principal's component registry and renders a grouped index directly on the canvas. Clicking a component tile moves the viewport to the exact component.",
         "A temporary Back to widget action solves a tiny but painful Figma problem: jumping somewhere useful and immediately losing the original context.",
       ],
+      images: [
+        {
+          src: "/projects/plugin_components-nav.png",
+          alt: "ComponentsNav searchable component index",
+          caption: "Searchable component index grouped by component family, with status badges and quick navigation actions.",
+        },
+      ],
     },
     {
       eyebrow: "What made it practical",
@@ -362,6 +414,13 @@ export const smartSelectionCase: ToolingCase = {
       body: [
         "Smart Selection lets designers define what they are looking for, scan deep hierarchy, isolate matching objects, save complex selections, and combine them for more advanced batch operations.",
         "The goal was not to create a flashy utility. It was to remove the mechanical layer hunting that quietly drains time and focus from design system work.",
+      ],
+      images: [
+        {
+          src: "/projects/plugin_smart-selection.png",
+          alt: "Smart Selection plugin interface",
+          caption: "Trait-based selection UI for filtering nested layers by name, dimensions, and additional constraints.",
+        },
       ],
     },
     {

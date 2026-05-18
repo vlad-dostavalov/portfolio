@@ -10,12 +10,19 @@ type OverviewItem = {
   value: string;
 };
 
+type CaseImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 type CaseSection = {
   eyebrow?: string;
   title: string;
   body?: string[];
   bullets?: string[];
   cards?: CaseSection[];
+  images?: CaseImage[];
   contained?: boolean;
 };
 
@@ -150,6 +157,30 @@ function StorySection({ section }: { section: CaseSection }) {
         <div className="grid gap-4 sm:grid-cols-2">
           {section.cards.map((card) => (
             <FeatureBlock key={card.title} section={card} />
+          ))}
+        </div>
+      ) : null}
+      {section.images ? (
+        <div
+          className={
+            section.images.length > 1
+              ? "grid gap-4 sm:grid-cols-2"
+              : "grid gap-4"
+          }
+        >
+          {section.images.map((image) => (
+            <figure key={image.src} className="flex flex-col gap-2">
+              <LightboxImage
+                src={image.src}
+                alt={image.alt}
+                className="w-full rounded-xl border bg-muted/30 shadow-sm"
+              />
+              {image.caption ? (
+                <figcaption className="text-xs leading-relaxed text-muted-foreground">
+                  {image.caption}
+                </figcaption>
+              ) : null}
+            </figure>
           ))}
         </div>
       ) : null}
