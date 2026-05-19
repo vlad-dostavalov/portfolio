@@ -99,9 +99,12 @@ export default function Page() {
                       <div className="font-sans text-sm text-muted-foreground">
                         {education.degree}
                       </div>
+                      <div className="text-xs tabular-nums text-muted-foreground sm:hidden">
+                        {education.start} - {education.end}
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                  <div className="hidden sm:flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
                     <span>
                       {education.start} - {education.end}
                     </span>
