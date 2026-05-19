@@ -78,11 +78,11 @@ export const DATA = {
         "Leading the design of a unified frontend system for Uzbekistan's largest bank, consolidating multiple internal products into a single high-load web interface. Architecting a proprietary design system with advanced Figma features (slots), focusing on scalability. Developing custom Figma utility plugins (e.g., \"Design Linter\") using AI to automate token management. Driving cross-functional alignment by hosting workshops for devs and analysts.",
       relatedProjects: [
         { title: "Unified Frontend System", href: "/projects/unified-frontend-system", image: "/projects/cover_ufs.png" },
-        { title: "Principal", href: "/projects/principal", image: "/projects/cover_principal.svg" },
-        { title: "DevPal", href: "/projects/devpal", image: "/projects/cover_devpal.svg" },
-        { title: "ComponentCard Widget", href: "/projects/component-card-widget", image: "/projects/cover_component-card.svg" },
-        { title: "ComponentsNav Widget", href: "/projects/components-nav-widget", image: "/projects/cover_components-nav.svg" },
-        { title: "Smart Selection", href: "/projects/smart-selection", image: "/projects/cover_smart-selection.svg" },
+        { title: "Principal", href: "/projects/principal", image: "/projects/cover_principal.png" },
+        { title: "DevPal", href: "/projects/devpal", image: "/projects/cover_devpal.png" },
+        { title: "ComponentCard Widget", href: "/projects/component-card-widget", image: "/projects/cover_component-card.png" },
+        { title: "ComponentsNav Widget", href: "/projects/components-nav-widget", image: "/projects/cover_components-nav.png" },
+        { title: "Smart Selection", href: "/projects/smart-selection", image: "/projects/cover_smart-selection.png" },
       ],
     },
     {
@@ -185,7 +185,7 @@ export const DATA = {
         "Automation",
       ],
       links: [],
-      image: "/projects/cover_principal.svg",
+      image: "/projects/cover_principal.png",
       video: "",
     },
     {
@@ -202,7 +202,7 @@ export const DATA = {
         "Workflow Tooling",
       ],
       links: [],
-      image: "/projects/cover_devpal.svg",
+      image: "/projects/cover_devpal.png",
       video: "",
     },
     {
@@ -219,7 +219,7 @@ export const DATA = {
         "Handoff",
       ],
       links: [],
-      image: "/projects/cover_component-card.svg",
+      image: "/projects/cover_component-card.png",
       video: "",
     },
     {
@@ -236,7 +236,7 @@ export const DATA = {
         "Productivity",
       ],
       links: [],
-      image: "/projects/cover_components-nav.svg",
+      image: "/projects/cover_components-nav.png",
       video: "",
     },
     {
@@ -253,7 +253,7 @@ export const DATA = {
         "Productivity",
       ],
       links: [],
-      image: "/projects/cover_smart-selection.svg",
+      image: "/projects/cover_smart-selection.png",
       video: "",
     },
     {

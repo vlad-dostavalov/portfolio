@@ -5,7 +5,7 @@ export const principalCase: ToolingCase = {
   subtitle:
     "A Figma intelligence layer that turns a design system from a static library into an auditable, documented, machine-readable product system.",
   tags: ["Design Systems", "AI & LLMs", "Automation", "Figma Plugin"],
-  cover: "/projects/cover_principal.svg",
+  cover: "/projects/cover_principal.png",
   coverAlt: "Principal ecosystem overview",
   overview: [
     { label: "Role", value: "Lead Product Designer & Architect" },
@@ -110,7 +110,7 @@ export const devPalCase: ToolingCase = {
   subtitle:
     "A Figma Dev Mode plugin that makes component readiness, implementation progress, code paths, and changelog history visible during developer handoff.",
   tags: ["Figma Dev Mode", "Developer Handoff", "Design Systems", "Workflow Tooling"],
-  cover: "/projects/cover_devpal.svg",
+  cover: "/projects/cover_devpal.png",
   coverAlt: "DevPal Dev Mode handoff interface",
   overview: [
     { label: "Role", value: "Product Designer, Plugin Architect & Developer" },
@@ -214,7 +214,7 @@ export const componentCardCase: ToolingCase = {
   subtitle:
     "A Figma widget that keeps component documentation, status, implementation type, and changelog exactly where design decisions happen: on the canvas.",
   tags: ["Figma Widget", "Design Systems", "Documentation", "Handoff"],
-  cover: "/projects/cover_component-card.svg",
+  cover: "/projects/cover_component-card.png",
   coverAlt: "ComponentCard widget interface",
   overview: [
     { label: "Role", value: "Senior Product Designer, DS Lead & Developer" },
@@ -303,7 +303,7 @@ export const componentsNavCase: ToolingCase = {
   subtitle:
     "A searchable table of contents for huge Figma design system files, with instant jump navigation, status badges, and a reliable way back.",
   tags: ["Figma Widget", "Design Systems", "Navigation", "Productivity"],
-  cover: "/projects/cover_components-nav.svg",
+  cover: "/projects/cover_components-nav.png",
   coverAlt: "ComponentsNav widget interface",
   overview: [
     { label: "Role", value: "Product Designer & Developer" },
@@ -392,7 +392,7 @@ export const smartSelectionCase: ToolingCase = {
   subtitle:
     "A Figma plugin for selecting, saving, and combining deeply nested object sets by traits instead of manually chasing layers.",
   tags: ["Figma Plugin", "Productivity", "Internal Tooling", "Automation"],
-  cover: "/projects/cover_smart-selection.svg",
+  cover: "/projects/cover_smart-selection.png",
   coverAlt: "Smart Selection plugin interface",
   overview: [
     { label: "Role", value: "Product Designer & Developer" },
