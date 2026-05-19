@@ -14,6 +14,7 @@ type CaseImage = {
   src: string;
   alt: string;
   caption?: string;
+  narrow?: boolean;
 };
 
 type CaseSection = {
@@ -164,12 +165,19 @@ function StorySection({ section }: { section: CaseSection }) {
         <div
           className={
             section.images.length > 1
-              ? "grid gap-4 sm:grid-cols-2"
+              ? "grid gap-4 sm:grid-cols-2 sm:items-start"
               : "grid gap-4"
           }
         >
           {section.images.map((image) => (
-            <figure key={image.src} className="flex flex-col gap-2">
+            <figure
+              key={image.src}
+              className={
+                image.narrow
+                  ? "mx-auto flex w-full max-w-[320px] flex-col gap-2"
+                  : "flex flex-col gap-2"
+              }
+            >
               <LightboxImage
                 src={image.src}
                 alt={image.alt}

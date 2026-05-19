@@ -137,6 +137,13 @@ export const devPalCase: ToolingCase = {
           src: "/projects/plugin_devpal_01.png",
           alt: "DevPal status panel in Figma Dev Mode",
           caption: "Component status panel inside Dev Mode: type, design status, dev status, version, path, changelog, and access control.",
+          narrow: true,
+        },
+        {
+          src: "/projects/plugin_devpal_02.png",
+          alt: "DevPal global changelog screen",
+          caption: "Global changelog mode with search, filters, status history, and recent component updates.",
+          narrow: true,
         },
       ],
       cards: [
@@ -172,13 +179,6 @@ export const devPalCase: ToolingCase = {
       body: [
         "The hardest product question was not what data to show, but how to make developers trust it. I added editor permissions, read-only states, sync indicators, and timestamped metadata so people could understand whether they were looking at local, synced, or offline data.",
         "The first user becomes an editor, later users request access, and non-editors can still inspect status without being able to rewrite shared handoff data.",
-      ],
-      images: [
-        {
-          src: "/projects/plugin_devpal_02.png",
-          alt: "DevPal global changelog screen",
-          caption: "Global changelog mode with search, filters, status history, and recent component updates.",
-        },
       ],
     },
     {
@@ -236,13 +236,6 @@ export const componentCardCase: ToolingCase = {
       body: [
         "ComponentCard sits beside a component or component set. With one click, it links to the target and pulls the component name, version context, and Figma description into a standardized card.",
         "It is not just a documentation block. The badges are editable controls, the changelog is collaborative, and the data feeds the wider Principal ecosystem.",
-      ],
-      images: [
-        {
-          src: "/projects/plugin_component-card.png",
-          alt: "ComponentCard widget attached to a component",
-          caption: "On-canvas widget showing component title, statuses, changelog, and a linked documentation block next to the actual component.",
-        },
       ],
     },
     {
@@ -325,13 +318,6 @@ export const componentsNavCase: ToolingCase = {
       body: [
         "The widget reads Principal's component registry and renders a grouped index directly on the canvas. Clicking a component tile moves the viewport to the exact component.",
         "A temporary Back to widget action solves a tiny but painful Figma problem: jumping somewhere useful and immediately losing the original context.",
-      ],
-      images: [
-        {
-          src: "/projects/plugin_components-nav.png",
-          alt: "ComponentsNav searchable component index",
-          caption: "Searchable component index grouped by component family, with status badges and quick navigation actions.",
-        },
       ],
     },
     {
