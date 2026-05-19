@@ -406,6 +406,13 @@ export const smartSelectionCase: ToolingCase = {
           src: "/projects/plugin_smart-selection.png",
           alt: "Smart Selection plugin interface",
           caption: "Trait-based selection UI for filtering nested layers by name, dimensions, and additional constraints.",
+          narrow: true,
+        },
+        {
+          src: "/projects/plugin_smart-selection_02.png",
+          alt: "Smart Selection saved selection interface",
+          caption: "Saved selection workflow for reusing complex object sets during multi-step component refactoring.",
+          narrow: true,
         },
       ],
     },
