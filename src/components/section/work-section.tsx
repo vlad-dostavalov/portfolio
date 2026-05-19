@@ -81,9 +81,12 @@ export default function WorkSection() {
                   <div className="font-sans text-sm text-muted-foreground">
                     {work.title}
                   </div>
+                  <div className="text-xs tabular-nums text-muted-foreground sm:hidden">
+                    {work.start} - {work.end ?? "Present"}
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+              <div className="hidden sm:flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
                 <span>
                   {work.start} - {work.end ?? "Present"}
                 </span>
