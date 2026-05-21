@@ -25,12 +25,15 @@ export default function AIImageGenerationPage() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
             AI-Powered Image Generation System
           </h1>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Building a secure local image-generation workflow so designers and marketers could create brand-consistent visuals without repeated photo shoots.
+          </p>
         </div>
       </BlurFade>
 
       {/* Overview */}
       <BlurFade delay={D * 2}>
-        <div className="grid grid-cols-3 gap-4 text-sm">
+        <div className="grid gap-4 text-sm sm:grid-cols-3">
           <div>
             <p className="text-muted-foreground">Role</p>
             <p className="font-medium">Lead UX/UI Product Designer</p>
@@ -46,34 +49,78 @@ export default function AIImageGenerationPage() {
         </div>
       </BlurFade>
 
-      {/* Challenge */}
       <BlurFade delay={D * 3}>
+        <div className="grid gap-4 rounded-xl border bg-muted/30 p-5 sm:grid-cols-[1.2fr_1fr]">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Quick read
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <li>The company needed fewer expensive shoots and more control over <strong className="case-keyword">brand-consistent, culturally believable imagery</strong>.</li>
+              <li>I combined <strong className="case-keyword">ComfyUI, Flux, ControlNet-style control, presets, and a private Figma plugin</strong> into one workflow.</li>
+              <li>The system moved image work from a slow external process to an internal tool designers could use in context.</li>
+            </ul>
+          </div>
+          <div className="grid gap-3">
+            <div>
+              <p className="text-lg font-semibold leading-none">Weeks to hours</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Image turnaround time improved dramatically.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">Local setup</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Data stayed inside the company environment.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">Figma plugin</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Designers generated assets without leaving their workspace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </BlurFade>
+
+      {/* Challenge */}
+      <BlurFade delay={D * 4}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Challenge</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Starting point
+          </p>
+          <h2 className="text-xl font-bold">Photo production was slow, expensive, and hard to keep consistent</h2>
           <p className="text-muted-foreground leading-relaxed">
-            When I joined the team, our company was spending a fortune on frequent photo shoots for marketing materials, UI elements, and in-app banners. Not only was this costly and time-consuming, but it also led to inconsistencies in style and brand representation. We needed a smarter, more efficient way to create high-quality, brand-consistent images that could represent realistic Uzbek facial features — all while keeping data secure within our local environment.
+            The company was spending heavily on frequent photo shoots for marketing materials, UI elements, and in-app banners. The process was costly, slow, and inconsistent. We needed a way to create high-quality images with realistic Uzbek facial features while keeping data inside the local environment.
           </p>
         </div>
       </BlurFade>
 
       {/* Objectives */}
-      <BlurFade delay={D * 4}>
+      <BlurFade delay={D * 5}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Objectives</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Direction
+          </p>
+          <h2 className="text-xl font-bold">The tool had to be powerful, but usable by non-technical teammates</h2>
           <ul className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <li><strong className="text-foreground">Cost Reduction:</strong> Eliminate the need for expensive photo sessions.</li>
-            <li><strong className="text-foreground">Brand Consistency:</strong> Ensure all images adhere to brand guidelines regarding poses, emotions, compositions, and colors.</li>
-            <li><strong className="text-foreground">Cultural Representation:</strong> Produce images with realistic and recognizable Uzbek facial features.</li>
-            <li><strong className="text-foreground">Security Compliance:</strong> Develop a solution that runs locally to safeguard data.</li>
-            <li><strong className="text-foreground">User Accessibility:</strong> Create an intuitive interface for team members with varying technical backgrounds.</li>
+            <li><strong className="case-keyword">Cost Reduction:</strong> Eliminate the need for expensive photo sessions.</li>
+            <li><strong className="case-keyword">Brand Consistency:</strong> Ensure all images adhere to brand guidelines regarding poses, emotions, compositions, and colors.</li>
+            <li><strong className="case-keyword">Cultural Representation:</strong> Produce images with realistic and recognizable Uzbek facial features.</li>
+            <li><strong className="case-keyword">Security Compliance:</strong> Develop a solution that runs locally to safeguard data.</li>
+            <li><strong className="case-keyword">User Accessibility:</strong> Create an intuitive interface for team members with varying technical backgrounds.</li>
           </ul>
         </div>
       </BlurFade>
 
       {/* Process */}
-      <BlurFade delay={D * 5}>
+      <BlurFade delay={D * 6}>
         <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bold">Process</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Process
+          </p>
+          <h2 className="text-xl font-bold">I turned model experimentation into a practical production workflow</h2>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold">1. Research and Model Selection</h3>
@@ -118,48 +165,57 @@ export default function AIImageGenerationPage() {
       </BlurFade>
 
       {/* Impact */}
-      <BlurFade delay={D * 6}>
+      <BlurFade delay={D * 7}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Impact</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Outcome
+          </p>
+          <h2 className="text-xl font-bold">Image creation became faster and more controllable</h2>
           <ul className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <li><strong className="text-foreground">Cost Savings:</strong> Reduced expenses by eliminating the need for regular photo shoots.</li>
-            <li><strong className="text-foreground">Brand Consistency:</strong> Achieved a uniform look across all marketing and UI materials.</li>
-            <li><strong className="text-foreground">Efficiency Boost:</strong> Accelerated the image creation process, reducing turnaround time from weeks to hours.</li>
-            <li><strong className="text-foreground">Empowered Team:</strong> Designers and marketers could now generate custom images effortlessly within Figma.</li>
-            <li><strong className="text-foreground">Cultural Representation:</strong> Successfully produced images featuring realistic Uzbek facial features.</li>
+            <li><strong className="case-keyword">Cost Savings:</strong> Reduced expenses by eliminating the need for regular photo shoots.</li>
+            <li><strong className="case-keyword">Brand Consistency:</strong> Achieved a uniform look across all marketing and UI materials.</li>
+            <li><strong className="case-keyword">Efficiency Boost:</strong> Accelerated the image creation process, reducing turnaround time from weeks to hours.</li>
+            <li><strong className="case-keyword">Empowered Team:</strong> Designers and marketers could now generate custom images effortlessly within Figma.</li>
+            <li><strong className="case-keyword">Cultural Representation:</strong> Successfully produced images featuring realistic Uzbek facial features.</li>
           </ul>
         </div>
       </BlurFade>
 
       {/* Case Highlight */}
-      <BlurFade delay={D * 7}>
+      <BlurFade delay={D * 8}>
         <div className="flex flex-col gap-3 border rounded-xl p-6 bg-muted/30">
-          <h2 className="text-xl font-bold">Case Highlight: Custom Figma Plugin Integration</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Integration
+          </p>
+          <h2 className="text-xl font-bold">The Figma plugin made AI generation part of the design workflow</h2>
           <div className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <p><strong className="text-foreground">Problem:</strong> Designers needed a seamless way to generate and integrate AI-produced images without juggling multiple tools.</p>
-            <p><strong className="text-foreground">Solution:</strong> Developed a private Figma plugin acting as a bridge between designers and the AI image generation server. The plugin features an intuitive UI where designers can specify poses, emotions, compositions, and colors. Images are generated and inserted directly into Figma projects.</p>
-            <p><strong className="text-foreground">Outcome:</strong></p>
+            <p><strong className="case-keyword">Problem:</strong> Designers needed a seamless way to generate and integrate AI-produced images without juggling multiple tools.</p>
+            <p><strong className="case-keyword">Solution:</strong> Developed a private Figma plugin acting as a bridge between designers and the AI image generation server. The plugin features an intuitive UI where designers can specify poses, emotions, compositions, and colors. Images are generated and inserted directly into Figma projects.</p>
+            <p><strong className="case-keyword">Outcome:</strong></p>
             <ul className="list-disc list-inside space-y-1 ml-4">
-              <li><strong className="text-foreground">Increased Productivity:</strong> Designers saved time by staying within one tool.</li>
-              <li><strong className="text-foreground">Consistency:</strong> Ensured all team members used the same parameters.</li>
-              <li><strong className="text-foreground">Ease of Use:</strong> Reduced the learning curve for non-technical staff.</li>
+              <li><strong className="case-keyword">Increased Productivity:</strong> Designers saved time by staying within one tool.</li>
+              <li><strong className="case-keyword">Consistency:</strong> Ensured all team members used the same parameters.</li>
+              <li><strong className="case-keyword">Ease of Use:</strong> Reduced the learning curve for non-technical staff.</li>
             </ul>
           </div>
         </div>
       </BlurFade>
 
       {/* Conclusion */}
-      <BlurFade delay={D * 8}>
+      <BlurFade delay={D * 9}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Conclusion</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Reflection
+          </p>
+          <h2 className="text-xl font-bold">The strongest value was workflow ownership</h2>
           <p className="text-muted-foreground leading-relaxed">
-            This project has been a thrilling journey that perfectly blends my passion for design and technology. By harnessing the power of AI, we&apos;ve revolutionized our content creation process, saving time and resources while enhancing brand consistency.
+            This project was valuable because it connected model quality, operational security, brand control, and designer usability. It gave the team an internal capability instead of another external dependency.
           </p>
         </div>
       </BlurFade>
 
       {/* Navigation */}
-      <BlurFade delay={D * 9}>
+      <BlurFade delay={D * 10}>
         <div className="flex justify-between items-center pt-4 border-t">
           <Link href="/projects/get-art" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             &larr; GET.ART

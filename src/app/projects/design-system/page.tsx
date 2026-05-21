@@ -25,13 +25,16 @@ export default function DesignSystemPage() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
             Development of a Design System
           </h1>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Turning a fragmented mobile banking UI into a reusable system that designers and developers could actually keep alive.
+          </p>
         </div>
       </BlurFade>
 
       {/* Overview */}
       <BlurFade delay={D * 2}>
         <div className="flex flex-col gap-6">
-          <div className="grid grid-cols-3 gap-4 text-sm">
+          <div className="grid gap-4 text-sm sm:grid-cols-3">
             <div>
               <p className="text-muted-foreground">Role</p>
               <p className="font-medium">Senior Product Designer</p>
@@ -48,34 +51,78 @@ export default function DesignSystemPage() {
         </div>
       </BlurFade>
 
-      {/* Challenge */}
       <BlurFade delay={D * 3}>
+        <div className="grid gap-4 rounded-xl border bg-muted/30 p-5 sm:grid-cols-[1.2fr_1fr]">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Quick read
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <li>The app had <strong className="case-keyword">duplicated UI, weak component usage, and inconsistent patterns</strong> across flows.</li>
+              <li>I built the system around <strong className="case-keyword">tokens, auto-layout components, documentation, and adoption</strong>, not just visual cleanup.</li>
+              <li>The strongest part was making the system practical for delivery: <strong className="case-keyword">faster feature work, fewer design bugs, and easier onboarding</strong>.</li>
+            </ul>
+          </div>
+          <div className="grid gap-3">
+            <div>
+              <p className="text-lg font-semibold leading-none">90%</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                New workflows using standardized components.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">8 to 5 weeks</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Average feature design and development cycle improved.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">40%</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Fewer design-related bugs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </BlurFade>
+
+      {/* Challenge */}
+      <BlurFade delay={D * 4}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Challenge</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Starting point
+          </p>
+          <h2 className="text-xl font-bold">The team needed a system, not another cleanup round</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Upon joining the team, the application suffered from significant inconsistencies both visually and technically. There were fragmented, unsystematized, and duplicate components in Figma. A majority of the layouts lacked the use of proper components. It became clear that a comprehensive design system was essential.
+            When I joined, the app had visual and technical inconsistency everywhere: duplicated components, unsystematized Figma files, and layouts assembled from one-off elements. The real risk was not aesthetics. Every new feature created more drift, more review work, and more frontend ambiguity.
           </p>
         </div>
       </BlurFade>
 
       {/* Objectives */}
-      <BlurFade delay={D * 4}>
+      <BlurFade delay={D * 5}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Objectives</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Direction
+          </p>
+          <h2 className="text-xl font-bold">I rebuilt the foundation around reuse and delivery</h2>
           <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-            <li>Establish a unified design system to ensure consistency across all platforms.</li>
-            <li>Systematize color palettes using color tokens and variables in Figma.</li>
-            <li>Develop components utilizing auto-layout, color tokens, spacing variables, and typographic styles.</li>
-            <li>Create guidelines, a backlog of tasks for development, and a design checklist.</li>
-            <li>Implement atomic design principles, starting with the most frequent elements.</li>
+            <li>Turn fragmented UI pieces into a unified design system for the mobile banking product.</li>
+            <li>Systematize color palettes through Figma variables and reusable tokens.</li>
+            <li>Build components with auto-layout, spacing variables, typography styles, and documented usage rules.</li>
+            <li>Create a practical backlog, checklist, and documentation so adoption did not depend on memory.</li>
+            <li>Start with high-frequency elements first, then expand into complete product flows.</li>
           </ul>
         </div>
       </BlurFade>
 
       {/* Process */}
-      <BlurFade delay={D * 5}>
+      <BlurFade delay={D * 6}>
         <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bold">Process</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Process
+          </p>
+          <h2 className="text-xl font-bold">I started where inconsistency was most expensive</h2>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold">1. Initiation and Systematization</h3>
@@ -113,7 +160,7 @@ export default function DesignSystemPage() {
       </BlurFade>
 
       {/* Images */}
-      <BlurFade delay={D * 6}>
+      <BlurFade delay={D * 7}>
         <div className="flex flex-col gap-4">
           <LightboxImage src="/projects/ds-process_component-structure.png" alt="Component Structure" className="" />
           {/* <div className="grid grid-cols-2 gap-4">
@@ -128,33 +175,39 @@ export default function DesignSystemPage() {
       </BlurFade>
 
       {/* Impact */}
-      <BlurFade delay={D * 7}>
+      <BlurFade delay={D * 8}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Impact</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Outcome
+          </p>
+          <h2 className="text-xl font-bold">The system became the default way to ship</h2>
           <ul className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <li><strong className="text-foreground">Component Adoption Rate:</strong> Component usage increased from a few basic elements to 90% of workflows using standardized components.</li>
-            <li><strong className="text-foreground">Efficiency:</strong> Development speed improved, reducing the average time to design and develop new features from 8 weeks to 5 weeks.</li>
-            <li><strong className="text-foreground">Productivity:</strong> UI error rates decreased dramatically, reflecting improved usability and fewer design flaws.</li>
-            <li><strong className="text-foreground">Onboarding Time:</strong> Reduced from 6 weeks to 3 weeks, thanks to clear documentation and standardized design patterns.</li>
-            <li><strong className="text-foreground">Bug Reduction:</strong> Design-related bugs decreased by 40%.</li>
+            <li><strong className="case-keyword">Component Adoption Rate:</strong> Component usage increased from a few basic elements to 90% of workflows using standardized components.</li>
+            <li><strong className="case-keyword">Efficiency:</strong> Development speed improved, reducing the average time to design and develop new features from 8 weeks to 5 weeks.</li>
+            <li><strong className="case-keyword">Productivity:</strong> UI error rates decreased dramatically, reflecting improved usability and fewer design flaws.</li>
+            <li><strong className="case-keyword">Onboarding Time:</strong> Reduced from 6 weeks to 3 weeks, thanks to clear documentation and standardized design patterns.</li>
+            <li><strong className="case-keyword">Bug Reduction:</strong> Design-related bugs decreased by 40%.</li>
           </ul>
         </div>
       </BlurFade>
 
       {/* Case Highlight */}
-      <BlurFade delay={D * 8}>
+      <BlurFade delay={D * 9}>
         <div className="flex flex-col gap-3 border rounded-xl p-6 bg-muted/30">
-          <h2 className="text-xl font-bold">Case Highlight: Automated Color Token Management</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Automation
+          </p>
+          <h2 className="text-xl font-bold">Color updates stopped being a manual scavenger hunt</h2>
           <div className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <p><strong className="text-foreground">Problem:</strong> The evolving design system required frequent updates to the color scheme. Developers had to manually search for changes and update colors, leading to inefficiencies.</p>
-            <p><strong className="text-foreground">Solution:</strong> Proposed and developed a custom Figma plugin to export a table of color tokens in a convenient format with navigation. Eliminated the manual task of updating colors, simplifying updates for designers and developers.</p>
+            <p><strong className="case-keyword">Problem:</strong> The evolving design system required frequent updates to the color scheme. Developers had to manually search for changes and update colors, leading to inefficiencies.</p>
+            <p><strong className="case-keyword">Solution:</strong> Proposed and developed a custom Figma plugin to export a table of color tokens in a convenient format with navigation. Eliminated the manual task of updating colors, simplifying updates for designers and developers.</p>
           </div>
             <LightboxImage src="/projects/ds-highlight_tokens.png" alt="Token table" className="" />
         </div>
       </BlurFade>
 
       {/* Figma Prototype */}
-      <BlurFade delay={D * 9}>
+      <BlurFade delay={D * 10}>
         <div className="flex flex-col gap-3">
           <h2 className="text-xl font-bold">Interactive Prototype</h2>
           <div className="rounded-xl border overflow-hidden bg-muted/30">
@@ -190,17 +243,20 @@ export default function DesignSystemPage() {
       </BlurFade> */}
 
       {/* Conclusion */}
-      <BlurFade delay={D * 11}>
+      <BlurFade delay={D * 12}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Conclusion</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Reflection
+          </p>
+          <h2 className="text-xl font-bold">The design system worked because it reduced daily friction</h2>
           <p className="text-muted-foreground leading-relaxed">
-            The implementation of the design system has significantly enhanced design consistency, productivity, and overall efficiency. The systematic approach and integration of automated tools have set a new standard for the team, ensuring seamless and timely updates and reducing manual workload.
+            The value was not just a cleaner UI library. The system changed how new flows were designed, reviewed, handed off, and updated. It gave the team a shared source of truth and made consistency a working habit instead of a recurring cleanup project.
           </p>
         </div>
       </BlurFade>
 
       {/* Navigation */}
-      <BlurFade delay={D * 12}>
+      <BlurFade delay={D * 13}>
         <div className="flex justify-between items-center pt-4 border-t">
           <Link href="/#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             &larr; All Projects

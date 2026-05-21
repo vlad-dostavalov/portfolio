@@ -13,7 +13,6 @@ const D = 0.04;
 export default function UnifiedFrontendSystemPage() {
   return (
     <article className="flex flex-col gap-12">
-      {/* Hero */}
       <BlurFade delay={D}>
         <div className="flex flex-col gap-4">
           <div className="flex flex-wrap gap-2">
@@ -22,15 +21,19 @@ export default function UnifiedFrontendSystemPage() {
             <Badge variant="secondary">Process Optimization</Badge>
             <Badge variant="secondary">B2E Interface Design</Badge>
           </div>
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-            Unified Frontend System
-          </h1>
+          <div className="flex flex-col gap-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+              Unified Frontend System
+            </h1>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Turning a delayed set of internal banking tools into one usable B2E platform, while building the design system and tooling that helped the team ship.
+            </p>
+          </div>
         </div>
       </BlurFade>
 
-      {/* Overview */}
       <BlurFade delay={D * 2}>
-        <div className="grid grid-cols-3 gap-4 text-sm">
+        <div className="grid gap-4 text-sm sm:grid-cols-3">
           <div>
             <p className="text-muted-foreground">Role</p>
             <p className="font-medium">Senior Product Designer &rarr; Design System Lead</p>
@@ -46,111 +49,159 @@ export default function UnifiedFrontendSystemPage() {
         </div>
       </BlurFade>
 
-      {/* Screenshot */}
       <BlurFade delay={D * 3}>
+        <div className="grid gap-4 rounded-xl border bg-muted/30 p-5 sm:grid-cols-[1.2fr_1fr]">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Quick read
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+              <li>I joined after the project had already been running for six months and was <strong className="case-keyword">up to 3 months behind</strong>.</li>
+              <li>My job was to make the interface usable for bank operators without <strong className="case-keyword">slowing down frontend delivery</strong>.</li>
+              <li>The leverage came from a <strong className="case-keyword">custom design system, automation, and close work with analysts and engineers</strong>.</li>
+            </ul>
+          </div>
+          <div className="grid gap-3">
+            <div>
+              <p className="text-lg font-semibold leading-none">On time</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Retail Banking shipped on schedule after being behind.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">8-10h shifts</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Interface decisions optimized for long operator workdays.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold leading-none">3 plugins</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Custom Figma tooling reduced handoff friction and manual checks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={D * 4}>
         <LightboxImage
           src="/projects/efs_screen.png"
-          alt="Unified Frontend System — Client Service interface"
+          alt="Unified Frontend System - Client Service interface"
           className="rounded-xl border shadow-sm w-full"
         />
       </BlurFade>
 
-      {/* Challenge */}
-      <BlurFade delay={D * 4}>
-        <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Challenge</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            I joined the team six months after the project had started. By that point development was already running up to 3 months behind schedule. The mission was to turn a fragmented collection of internal banking tools into one modern, unified frontend platform for bank operators and employees. The pressure was real: we had to move fast, build a solid design foundation without slowing down the engineers, and create an interface that would actually feel comfortable for people who had spent years on clunky legacy systems and were very set in their ways.
-          </p>
-        </div>
-      </BlurFade>
-
-      {/* Objectives */}
       <BlurFade delay={D * 5}>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Objectives</h2>
-          <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-            <li>Consolidate all operator workflows into a single cohesive B2E platform</li>
-            <li>Build a custom design system on top of the existing developer UI framework to speed up delivery</li>
-            <li>Dramatically improve readability and reduce cognitive load for long shifts</li>
-            <li>Create smooth, automated design-to-code handoff processes</li>
-          </ul>
-        </div>
-      </BlurFade>
-
-      {/* Process */}
-      <BlurFade delay={D * 6}>
-        <div className="flex flex-col gap-4">
-          <h2 className="text-xl font-bold">Process</h2>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <h3 className="font-semibold">1. Design System Foundation</h3>
-              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
-                <li>Took the existing UI framework, completely overhauled the styling, and layered a robust multi-level tokenization system on top of it.</li>
-                <li>Using heavy automation, mass-updated hundreds of components and variants in just a couple of weeks — unblocking the dev team and quickly closing the design gap.</li>
-                <li>Agreed with frontend leads not to rip up what they had already built, preserving development momentum.</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="font-semibold">2. Research with a Tough Audience</h3>
-              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
-                <li>Bank operators almost never complain and genuinely believe &quot;everything is fine&quot; — standard user interviews didn&apos;t work.</li>
-                <li>Leaned hard on business analysts — former operators themselves — and ran deep-dive sessions with them as domain experts.</li>
-                <li>Conducted periodic on-site observations at branches to see real workflows in action.</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="font-semibold">3. Design System Lead & Tooling</h3>
-              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
-                <li>Once the Retail Banking module stabilized, stepped into the Design System Lead role.</li>
-                <li>Built three custom Figma plugins with Cursor.ai in a matter of weeks to close the design-dev gap.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </BlurFade>
-
-      {/* Figma Plugins Highlight */}
-      <BlurFade delay={D * 7}>
-        <div className="flex flex-col gap-3 border rounded-xl p-6 bg-muted/30">
-          <h2 className="text-xl font-bold">Custom Figma Plugins</h2>
-          <div className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <p>To finally close the eternal design-dev gap, I built three custom Figma plugins:</p>
-            <ul className="list-disc list-inside space-y-2 ml-2">
-              <li><strong className="text-foreground">JSON Token Exporter</strong> — exports tokens in the exact format developers needed, eliminating manual handoff errors.</li>
-              <li><strong className="text-foreground">Built-in Status Tracker</strong> — tracks component and screen status directly inside Figma files.</li>
-              <li><strong className="text-foreground">&quot;Design Linter&quot;</strong> — automatically audits components and semantic properties for consistency.</li>
-            </ul>
-            <p>I also ran internal workshops to teach the wider team how to work with the design system and documentation properly.</p>
-          </div>
-        </div>
-      </BlurFade>
-
-      {/* Key Outcomes */}
-      <BlurFade delay={D * 8}>
-        <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Key Outcomes</h2>
-          <ul className="text-muted-foreground leading-relaxed space-y-3 text-sm">
-            <li><strong className="text-foreground">On-time Delivery:</strong> Turned a project that was up to 3 months behind into on-time delivery. The Retail Banking module went live exactly on schedule, and we immediately moved on to Corporate Banking.</li>
-            <li><strong className="text-foreground">Operator Comfort:</strong> Made the interface noticeably easier and less tiring for 8-10 hour shifts: larger typography, smart whitespace, and contrast boosted to WCAG AA 4.5:1 — all while keeping every critical piece of data visible.</li>
-            <li><strong className="text-foreground">Automation:</strong> Plugins eliminated manual handoff errors and saved hours every week for both designers and developers.</li>
-            <li><strong className="text-foreground">Data-driven:</strong> Set up full UI telemetry and event tracking before beta so we could hit the ground running with data-driven iterations.</li>
-          </ul>
-        </div>
-      </BlurFade>
-
-      {/* Conclusion */}
-      <BlurFade delay={D * 9}>
-        <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-bold">Conclusion</h2>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Starting point
+          </p>
+          <h2 className="text-xl font-bold">I joined when the project was already behind</h2>
           <p className="text-muted-foreground leading-relaxed">
-            In one year I helped transform a delayed, fragmented effort into a clean, modern, and genuinely usable unified frontend system. I didn&apos;t just draw screens — I built the processes, tools, and design foundation that keep delivering value long after I move on. Bank operators finally got a single workspace that respects their reality and makes their daily work noticeably better.
+            The team was trying to merge several internal banking tools into one workspace for operators and employees. Development was already up to 3 months behind, and the UI foundation was not strong enough to carry the product at speed.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            The tricky part was not just drawing better screens. We had to improve readability, create a scalable design system, and keep engineers moving while working with users who were used to legacy tools and rarely complained.
           </p>
         </div>
       </BlurFade>
 
-      {/* Navigation */}
+      <BlurFade delay={D * 6}>
+        <div className="flex flex-col gap-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            What had to change
+          </p>
+          <h2 className="text-xl font-bold">The product needed a foundation, not more isolated screens</h2>
+          <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
+            <li>Consolidate operator workflows into one cohesive B2E platform.</li>
+            <li>Build a custom design system on top of the existing developer UI framework.</li>
+            <li>Improve readability and reduce cognitive load during long shifts.</li>
+            <li>Automate design-to-code handoff wherever the process was too manual.</li>
+          </ul>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={D * 7}>
+        <div className="flex flex-col gap-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Process
+          </p>
+          <h2 className="text-xl font-bold">I focused on the parts that would unblock delivery</h2>
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
+              <h3 className="font-semibold">1. Stabilized the design system first</h3>
+              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
+                <li>Took the existing UI framework, overhauled the styling, and layered multi-level tokenization on top.</li>
+                <li>Used automation to mass-update hundreds of components and variants in a couple of weeks.</li>
+                <li>Aligned with frontend leads to preserve what was already built instead of forcing a reset.</li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="font-semibold">2. Researched through domain experts and observation</h3>
+              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
+                <li>Standard interviews were weak because operators rarely complained and often said everything was fine.</li>
+                <li>Worked closely with business analysts who had operator experience and knew the real workflows.</li>
+                <li>Used branch observations to see how the interface behaved in daily work.</li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="font-semibold">3. Built tooling where handoff was too slow</h3>
+              <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-1 text-sm">
+                <li>Moved into the Design System Lead role after the Retail Banking module stabilized.</li>
+                <li>Built custom Figma plugins to reduce token export work, status tracking, and design system checks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={D * 8}>
+        <div className="flex flex-col gap-3 border rounded-xl p-6 bg-muted/30">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Leverage
+          </p>
+          <h2 className="text-xl font-bold">Tooling saved the team from repeating the same handoff work</h2>
+          <div className="text-muted-foreground leading-relaxed space-y-3 text-sm">
+            <p>The team did not need more meetings about handoff. It needed less manual work and fewer places for mistakes to hide.</p>
+            <ul className="list-disc list-inside space-y-2 ml-2">
+              <li><strong className="case-keyword">JSON Token Exporter</strong>: exported tokens in the exact format developers needed.</li>
+              <li><strong className="case-keyword">Built-in Status Tracker</strong>: kept component and screen status inside Figma.</li>
+              <li><strong className="case-keyword">Design Linter</strong>: audited components and semantic properties for consistency.</li>
+            </ul>
+            <p>I also ran internal workshops so designers, analysts, and engineers could use the system the same way.</p>
+          </div>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={D * 9}>
+        <div className="flex flex-col gap-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Outcome
+          </p>
+          <h2 className="text-xl font-bold">The project moved from delayed to shippable</h2>
+          <ul className="text-muted-foreground leading-relaxed space-y-3 text-sm">
+            <li><strong className="case-keyword">On-time delivery:</strong> Retail Banking went live on schedule after the project had been up to 3 months behind.</li>
+            <li><strong className="case-keyword">Operator comfort:</strong> Larger typography, clearer spacing, and WCAG AA contrast made long shifts less tiring while keeping dense data visible.</li>
+            <li><strong className="case-keyword">Automation:</strong> Plugins reduced handoff errors and saved repeated manual work for designers and developers.</li>
+            <li><strong className="case-keyword">Data-ready iteration:</strong> UI telemetry and event tracking were prepared before beta, so the team could learn from real usage.</li>
+          </ul>
+        </div>
+      </BlurFade>
+
       <BlurFade delay={D * 10}>
+        <div className="flex flex-col gap-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Reflection
+          </p>
+          <h2 className="text-xl font-bold">The design work mattered because it changed how the team worked</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            This was not only a UI redesign. It was a recovery effort: stabilize the system, respect the constraints of an active frontend team, learn from domain experts, and create tooling that kept the work moving after the first module shipped.
+          </p>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={D * 11}>
         <div className="flex justify-between items-center pt-4 border-t">
           <Link href="/#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             &larr; All Projects
